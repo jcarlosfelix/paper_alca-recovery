@@ -40,16 +40,15 @@
 
 \begin{document}
 
-\title*{A novel distributed nature-inspired algorithm for solving optimization problems} 
-\titlerunning{(Biological) Life-Cycle Algorithm}
+\title*{Recovering from population extinction in the Animal Life Cycle Algorithm (ALCA)} 
+\titlerunning{Animal Life Cycle Algorithm (ALCA)}
 % Use \titlerunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
-\author{J. C. Felix-Saul, Mario García Valdez, and Juan J. Merelo Guervós}
+\author{J. C. Felix-Saul, Mario García Valdez}
 % Use \authorrunning{Short Title} for an abbreviated version of
 % your contribution title if the original one is too long
 \institute{J. C. Felix-Saul \at Tijuana Institute of Technology, Tijuana, Mexico, \email{name@email.address}
-\and Mario García Valdez \at Tijuana Institute of Technology, Tijuana, Mexico, \email{name@email.address}
-\and Juan J. Merelo Guervós \at Universidad de Granada, Granada, Spain \email{name@email.address}}
+\and Mario García Valdez \at Tijuana Institute of Technology, Tijuana, Mexico, \email{name@email.address}}
 %
 % Use the package "url.sty" to avoid
 % problems with special characters
@@ -57,48 +56,9 @@
 %
 \maketitle
 
-\abstract*{Several bio-inspired algorithms use population evolution as
-analogies of Nature. In this paper, we present an algorithm inspired by the
-biological Life-Cycle of animal species, which consists of several stages:
-birth, growth, reproduction, and death. As in nature, we intend to execute all
-% single animals in animal species? Species follow a different lifecycle... - JJ
-these stages in parallel and asynchronously on a population that evolves
-constantly. From the ground up, we designed the algorithm as a cloud-native
-solution leveraging cloud  resources to divide the processing workload
-among several computers or running the algorithm as a cloud service. The
-algorithm works concurrently and asynchronously on a constantly evolving
-population, using different computing nodes (or containers) independently,
-eliminating waiting times between processes. This algorithm seeks to imitate
-the natural life cycle, where new individuals are born at any moment and mature
-over time, where they age and suffer mutations throughout their lives.
-% Individuals don't suffer inheritable mutations. That would be a Lamarckian view of evolution - JJ
-In
-reproduction, couples match by mutual attraction, % But this is related to fitness - JJ
-and they may have
-offspring. Death can happen to everyone: from a newborn to an aged adult, where
-the individual's fitness will impact their longevity. As a proof-of-concept, we
-implemented the algorithm with Docker containers by solving the OneMax problem
-comparing it with a basic (sequential) GA algorithm, where it showed favorable
-and promising results.}
+\abstract*{In previous work, we introduced an algorithm inspired by the biological Life Cycle of animal species, consisting of the stages: birth, growth, reproduction, and death. As in nature, population individuals grow older and age. In this algorithm's reproduction process, couples must match by mutual attraction, where sometimes individuals won't procreate offspring because of the mate's low appeal. As time passes, the environment kills its individuals either because of low fitness or age, causing occasional population extinction. When this condition presents, it is required to create a new population if evaluations are available and termination conditions are favorable to continue. Some alternatives we explored to restart this new population are the random generation of a new set of candidate solutions and the creation of a new set of candidate solutions based on either: a mix of elements from the best historically found candidate solutions set (Elite); the mutation with uniform modification from the Elite or the historically best-found solution (Champion); crossing the Champion with the Elite; the projection of the Elite towards the Champion; based on random use of the previous alternatives. In this paper, we present one of the most promising alternatives to solve population extinction caused by nature's pressure in the Life Cycle algorithm: the projection of the Elite towards the Champion, where we compare the results obtained with the latter and the random use of all the alternatives, using classic benchmark functions for optimization for comparison.}
 
-\abstract{Several bio-inspired algorithms use population evolution as analogies
-of nature. In this paper, we present an algorithm inspired by the biological
-Life-Cycle of animal species, which consists of several stages: birth, growth,
-reproduction, and death. As in nature, we intend to execute all these stages in
-parallel and asynchronously on a population that evolves constantly. From the
-ground up, we designed the algorithm as a cloud-native solution using the cloud
-available resources to divide the processing workload among several computers
-or running the algorithm as a cloud service. The algorithm works concurrently
-and asynchronously on a constantly evolving population, using different
-computers (or containers) independently, eliminating waiting times between
-processes. This algorithm seeks to imitate the natural life cycle, where new
-individuals are born at any moment and mature over time, where they age and
-suffer mutations throughout their lives. In reproduction, couples match by
-mutual attraction, where they may have offspring. Death can happen to everyone:
-from a newborn to an aged adult, where the individual's fitness will impact
-their longevity. As a proof-of-concept, we implemented the algorithm with
-Docker containers by solving the OneMax problem comparing it with a basic
-(sequential) GA algorithm, where it showed favorable and promising results.}
+\abstract{In previous work, we introduced an algorithm inspired by the biological Life Cycle of animal species, consisting of the stages: birth, growth, reproduction, and death. As in nature, population individuals grow older and age. In this algorithm's reproduction process, couples must match by mutual attraction, where sometimes individuals won't procreate offspring because of the mate's low appeal. As time passes, the environment kills its individuals either because of low fitness or age, causing occasional population extinction. When this condition presents, it is required to create a new population if evaluations are available and termination conditions are favorable to continue. Some alternatives we explored to restart this new population are the random generation of a new set of candidate solutions and the creation of a new set of candidate solutions based on either: a mix of elements from the best historically found candidate solutions set (Elite); the mutation with uniform modification from the Elite or the historically best-found solution (Champion); crossing the Champion with the Elite; the projection of the Elite towards the Champion; based on random use of the previous alternatives. In this paper, we present one of the most promising alternatives to solve population extinction caused by nature's pressure in the Life Cycle algorithm: the projection of the Elite towards the Champion, where we compare the results obtained with the latter and the random use of all the alternatives, using classic benchmark functions for optimization for comparison.}
 
 %\keywords{Distributed Bioinspired Algorithms \and Genetic Algorithms \and Cloud Computing.}
 
