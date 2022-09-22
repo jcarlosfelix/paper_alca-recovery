@@ -111,55 +111,57 @@ comparison.}
 Bio-inspired algorithms have been very successful when used to solve complex
 optimization problems
 \cite{castillo2019comparative,valdez2021swarm,acherjee2020ultrasonic}, but as
-their complexity increases so does the computing power required
+their complexity increases so does the computing power required to execute them
 \cite{ontiveros2018high}. One strategy to address this processing need is to
 use distributed computing \cite{thain2005distributed}, or the resources
-available in the cloud \cite{garcia2013there,eshratifar2019bottlenet} to help
-find the solution. This strategy gives us elasticity to adjust (increase or
-reduce) the computing power to achieve a balance according to the nature of the
-problem.
+available in the cloud to help find the solution
+\cite{garcia2013there,eshratifar2019bottlenet}. This strategy gives us
+elasticity to increase (or reduce) the computing power to achieve a balance
+according to the nature of the problem.
 
-One of the problems that we have identified in this research is that most
-bio-inspired algorithms are designed with a traditionally sequential
-perspective \cite{porto2018evolutionary,back1996evolutionary}, where each
-process must wait for the previous task to finish before continuing. Some
-architectures address this issue
-\cite{valdez2021container,garcia2015evospace,merelo2016nodio}, what
-distinguishes this proposal is the introduction of  an algorithm designed in its
-entirety as a native solution in the cloud, fully distributed, where its
-processes are executed in parallel and interaction takes place asynchronously. This technique makes it
+Most bio-inspired algorithms are traditionally designed with a sequential
+(synchronous) perspective \cite{porto2018evolutionary,back1996evolutionary},
+where each process must wait for the previous task to finish before continuing.
+Our proposal presents an algorithm in its entirety as a native solution in the
+cloud, fully distributed, where its processes are executed in parallel and
+asynchronously. We designed the algorithm as a cloud-native solution using the
+cloud available resources to divide the processing workload, among several
+computers or running the algorithm as a cloud service. This technique makes it
 easy to scale the computing power according to the complexity required by the
 problem \cite{armbrust2010view}.
 
-We designed our algorithm using observation, analysis, and abstraction in
-nature to identify what most species in the animal kingdom have in common,
-where individuals of a population that best adapt to the environment have
-greater chances of survival, reproduction, and improvement of the species.
-Imagining as if the task of writing these rules of evolution was in our hands,
-questioning how we could solve it?
+In previous work, we introduced an algorithm inspired by the biological
+life-cycle of animal species. As in nature, population individuals grow older
+and age. In this algorithm's reproduction process, couples must match by mutual
+attraction, where sometimes individuals won't procreate offspring because of
+the mate's low appeal. As time passes, the environment kills its individuals
+either because of low fitness or age, causing occasional population extinction.
+When this condition presents itself, it is required to create a new population
+to continue evolution (restart). We previously used to generate a new random
+set of solutions, with the cost of losing all evolution knowledge.
 
-Like nature, we identified what most species have in common in the life cycle.
-Our algorithm works on a constantly evolving population, experiencing the
-stages that all living beings undergo \cite{read1968system}: being born,
-growing up, reproducing, and dying, where each of these stages will be
-processes (of our algorithm) that randomly affect the population individuals,
-emulating the organic way.
-
-The main contribution of the paper is to design and create a new algorithm with
-the purpose to demonstrate that it is possible to evolve a population of
-individuals, similar to a Genetic Algorithm (GA), using a distributed,
-parallel, and asynchronous methodology by implementation and testing of the
-algorithm. 
+The main contribution of this paper is to demonstrate that it is possible to
+evolve a population of individuals, similar to a Genetic Algorithm (GA), using
+a distributed, parallel, and asynchronous methodology by the algorithm
+implementation and testing. We improve the algorithm behaviour by solving
+population extinction caused by nature's pressure in the Animal Life Cycle
+Algorithm with one of the most promising alternatives: the projection of the
+Elite towards the Champion, where we compare the results obtained with the
+latter and the random use of the more traditional alternatives (mutation and
+crossover), using classic benchmark functions for optimization for comparison.
 
 We present the description of the following sections in our paper. First, we
-introduce our algorithm inspired by the Life-Cycle of animal species in
-% Please use capitalization consistently; I don't think this should go in Caps - JJ
+illustrate our algorithm model, the problem found with the occasional
+population extinction and our proposed solution in
 section~\ref{section.proposal}, followed by our experimental configuration and
-results in section~\ref{section.experiments}, we analyze and describe some of
-our research findings in section~\ref{section.discussion}, and we finalize by
-presenting some inferences based on our experiments' results in
+results in section~\ref{section.experiments}, where we continue to analyze and
+describe some of our research findings in section~\ref{section.discussion}. We
+finalize by presenting some inferences based on our experiments results in
 section~\ref{section.conclusions}.
 
+%PREVIOUSLY / FROM THE FIRST CHAPTER
+%We designed our algorithm using observation, analysis, and abstraction in nature to identify what most species in the animal kingdom have in common, where individuals of a population that best adapt to the environment have greater chances of survival, reproduction, and improvement of the species. Imagining as if the task of writing these rules of evolution was in our hands, questioning how we could solve it?
+%Like nature, we identified what most species have in common in the life cycle. Our algorithm works on a constantly evolving population, experiencing the stages that all living beings undergo \cite{read1968system}: being born, growing up, reproducing, and dying, where each of these stages will be processes (of our algorithm) that randomly affect the population individuals, emulating the organic way.
 
 \section{Proposal}
 \label{section.proposal}
