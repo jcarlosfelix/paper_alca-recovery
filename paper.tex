@@ -26,8 +26,10 @@
 \usepackage{newtxtext}       % 
 \usepackage{newtxmath}       % selects Times Roman as basic font
 
-\usepackage{booktabs}       %Booktabs Table Style
-
+\usepackage{booktabs}       % Booktabs Table Style
+	
+\usepackage{graphicx}       % To frame graphic images
+\usepackage[export]{adjustbox}
 
 % see the list of further useful packages
 % in the Reference Guide
@@ -383,8 +385,10 @@ alternatives in the following:
 
 \subsubsection{Ackley Benchmark Function Experiment}
 
+The goal of our fist experiment was to have fun, while improving the graphics with best images.
+
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/fig_fun_ackley.pdf}
+    \includegraphics[width=\linewidth, frame]{img/fig_fun_ackley.pdf}
     \caption{Box and whisker chart for the Ackley Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_ackley}
     \end{figure}
 
@@ -420,7 +424,7 @@ alternatives in the following:
 \subsubsection{Bohachevsky Benchmark Function Experiment}
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/fig_fun_bohachevsky.pdf}
+    \includegraphics[width=\linewidth, frame]{img/fig_fun_bohachevsky.pdf}
     \caption{Box and whisker chart for the Bohachevsky Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_bohachevsky}
     \end{figure}
 
@@ -456,7 +460,7 @@ alternatives in the following:
 \subsubsection{Griewank Benchmark Function Experiment}
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/fig_fun_griewank.pdf}
+    \includegraphics[width=\linewidth, frame]{img/fig_fun_griewank.pdf}
     \caption{Box and whisker chart for the Griewank Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_griewank}
     \end{figure}
 
@@ -492,7 +496,7 @@ alternatives in the following:
 \subsubsection{Rastrigin Benchmark Function Experiment}
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/fig_fun_rastrigin.pdf}
+    \includegraphics[width=\linewidth, frame]{img/fig_fun_rastrigin.pdf}
     \caption{Box and whisker chart for the Rastrigin Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_rastrigin}
     \end{figure}
 
@@ -528,7 +532,7 @@ alternatives in the following:
 \subsubsection{Sphere Benchmark Function Experiment}
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/fig_fun_sphere.pdf}
+    \includegraphics[width=\linewidth, frame]{img/fig_fun_sphere.pdf}
     \caption{Box and whisker chart for the Sphere Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_sphere}
     \end{figure}
 
