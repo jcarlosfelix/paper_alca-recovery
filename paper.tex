@@ -26,6 +26,9 @@
 \usepackage{newtxtext}       % 
 \usepackage{newtxmath}       % selects Times Roman as basic font
 
+\usepackage{booktabs}       %Booktabs Table Style
+
+
 % see the list of further useful packages
 % in the Reference Guide
 
@@ -299,13 +302,76 @@ the Champion strategy and the random use of the more traditional alternatives
 optimization as implemented by the DEAP (Distributed Evolutionary Algorithms in
 Python) library \cite{fortin2012deap}.
 
-\subsection{Experimental Setup} 
-
 The alternatives to restart this new population are the creation of a new set
 of candidate solutions based on either: The mutation with uniform modification
 from the Elite or the historically best-found solution (Champion); Crossing the
 Champion with the Elite; The projection of the Elite towards the Champion;
 Based on random use of the previous alternatives.
+
+\subsection{Experimental Setup} 
+
+The following tables show the configuration used to execute the experiments for
+the analysis and comparison in this paper. In
+Table~\ref{tab.general_configuration}, we can find the General Configuration
+for the Animal Life Cycle Algorithm. All values from this configuration
+remained constant during all phases of the experiment runs. The following
+table, Table~\ref{tab.benchmark_fun_config}, shows the values used for the
+Classic Benchmark Functions for Optimization, where these are adjusted
+accordingly for each function.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% To change the size of the font use \scriptsize or \tiny
+\begin{table}[]
+    \scriptsize
+    \centering        
+    \caption{Animal Life Cycle Algorithm (ALCA) General Configuration.}\label{tab.general_configuration}
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    \multicolumn{2}{l}{ALCA General Configuration} \\ \midrule
+    Function name & ALL \\
+    Population & 500 \\
+    Target error & 1.00E-08 \\
+    Crossover rate & 100 \\
+    Mutation rate & 7 \\
+    Max age & 40 \\
+    Tournament rep. & 100 \\
+    Sample size & 20 \\
+    Base approval & 80 \\
+    Goal approval & 200 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[]
+    \scriptsize
+    \centering        
+    \caption{Classic Benchmark Functions for Optimization Configuration.}\label{tab.benchmark_fun_config}
+    \begin{tabular}{@{}llllllll@{}}
+    \toprule
+    \multicolumn{8}{l}{Benchmark Configuration Setup} \\ \midrule
+    Function name & Ackley & Bohachevsky & Griewank & Rastrigin & Sphere & Rosenbrock & Rosenbrock \\
+    Dimensions & 5, 10 & 5, 10 & 5, 10 & 5, 10 & 5, 10 & 5 & 10 \\
+    Max evaluations & 200,000 & 200,000 & 200,000 & 200,000 & 200,000 & 500,000 & 1,000,000 \\
+    Max stagnation & 50,000 & 50,000 & 50,000 & 50,000 & 50,000 & 125,000 & 250,000 \\
+    Target fitness & -20.0 & -12.0 & -150.0 & -80.0 & -50.0 & -3500.0 & -3500.0 \\
+    Bound matrix & {[}-32, 32{]} & {[}-2, 2{]} & {[}-500, 500{]} & {[}-5, 5{]} & {[}-5, 5{]} & {[}-2, 2{]} & {[}-2, 2{]} \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+\subsection{Experiment Results}
+
+For each experiment, we ran 60 independent executions per algorithm and
+recorded the following results: Last Generation, Total Evaluations, Time
+(seconds), Evaluations/second. The labels used on the results of our summarized
+experiments tables are the following:
+
+\begin{itemize}
+    \item   Last Gen.   is the generation that found the solution.
+    \item   Eval.       is the total number of evaluations the algorithm executed. 
+    \item   Time (sec)  is the total elapsed or wall clock time, in seconds. 
+    \item   Eval/sec    is the calculated rate of evaluations per second.
+\end{itemize}
 
 
 \subsection{ALTO / HASTA AQUI VAMOS}
@@ -328,76 +394,14 @@ Based on random use of the previous alternatives.
 %------------- We could have used several strategies to evaluate this attraction. Considering this algorithm takes a similar focus as the study of bacteria growth in microbiology, where we can observe and analyze the evolution of a population over time. As in nature' most species, the bigger a specimen is, the more attractive it is to its mating candidates. To be consistent with both ideas in our algorithm, we use the equation of Newton's Law of Universal Gravitation (1) to calculate the attraction between two individuals, where we visualize the individual fitness as its mass when using the equation. In previous work, Newton's Law of Universal Gravitation has shown success in helping to solve optimization problems \cite{sanchez2014fuzzy,rashedi2009gsa}.
 %Death: The death stage represents the challenges and adversities that life presents to overcome. This process evaluates the individual resistance to survive in the environment. The better fitness the individual has will increase its chances of survival. As time progresses, the demands of nature will also increase, pushing for only the best individuals to survive.
 %----------------------------------------------------
-
-
-
-
-
-
-
-
+%One strategic difference in our algorithm implementation is the reproduction process, which is flexible to work in parallel with multiple couple selection methods, for example, tournament selection, random selection (Closed Reproduction process), and couple match by creating a new mating individual (Open Reproduction process). We use many combinations of the containerized processes, up to the minimum number required to obtain good results. Figure~\ref{fig.processes_containers} shows a comparison of only two alternatives for the implementation of the algorithm. Our experimentation started with a configuration of ten processes and ended in five, shown on the left and right sides of Fig.~\ref{fig.processes_containers}, respectively.
+%In our four experiments, we needed to match or balance the experimentation parameters according to the specifications of the algorithm used by the DEAP library. This is to be able to verify if our algorithm would also converge on the solutions in a similar number of evaluations and execution time. Table~\ref{tab.configuration} shows the OneMax initial configuration for DEAP and Life-Cycle experiment.
+%----------------------------------------------------
 
 \section{Another Section}
 \label{section.another_section}
 
-As a proof-of-concept, we implemented the algorithm with Docker containers by
-solving the OneMax problem to compare it with a traditional GA algorithm using
-the DEAP (Distributed Evolutionary Algorithms in Python) library
-\cite{fortin2012deap}. The OneMax problem \cite{krejca2020lower,witt2019upper}
-uses a genetic algorithm to evolve a population of randomly generated
-individuals with zeros and ones, and it stops until a solution of only ones is
-found.
-
-\subsection{Experimental Setup}
-
-\begin{figure}
-    \includegraphics[width=\textwidth]{img/fig5_processes_containers.pdf}
-    \caption{Life-Cycle algorithm processes in containers comparison.} \label{fig.processes_containers}
-    \end{figure}
-
-One strategic difference in our algorithm implementation is the reproduction
-process, which is flexible to work in parallel with multiple couple selection
-methods, for example, tournament selection, random selection (Closed
-Reproduction process), and couple match by creating a new mating individual
-(Open Reproduction process). We use many combinations of the containerized
-processes, up to the minimum number required to obtain good results.
-Figure~\ref{fig.processes_containers} shows a comparison of only two alternatives for the
-implementation of the algorithm. Our experimentation started with a
-configuration of ten processes and ended in five, shown on the left and right
-sides of Fig.~\ref{fig.processes_containers}, respectively.
-
 \subsection{Experiment Configuration}
-
-In our four experiments, we needed to match or balance the experimentation
-parameters according to the specifications of the algorithm used by the DEAP
-library. This is to be able to verify if our algorithm would also converge on
-the solutions in a similar number of evaluations and execution time.
-Table~\ref{tab.configuration} shows the OneMax initial configuration for DEAP and Life-Cycle
-experiment.
-
-\begin{table}[]
-    \centering        
-    \caption{OneMax initial configuration for DEAP and Life-Cycle experiment.}\label{tab.configuration}
-    \begin{tabular}{|l|l|l|}
-    \hline
-    \textbf{Configuration} & \textbf{DEAP} & \textbf{Life-Cycle} \\ \hline
-    Population & 60 & 60 \\ \hline
-    Max Generation & 20 & 20 \\ \hline
-    Stagnation & Off & 10 \\ \hline
-    Chromosome Length & 20 & 20 \\ \hline
-    Target Fitness & 20 & 20 \\ \hline
-    Crossover Rate & 100 & 100 \\ \hline
-    Mutation Rate & 7 & 7 \\ \hline
-    Tournament Rate & 100 & 50 \\ \hline
-    Tournament Sample & 3 & 4 \\ \hline
-    Open Reproduction Rate & NA & 5 \\ \hline
-    Closed Reproduction Rate & NA & 45 \\ \hline
-    Max Age & NA & 80 \\ \hline
-    Base Approval & NA & 80 \\ \hline
-    Goal Approval & NA & 100 \\ \hline
-    \end{tabular}
-    \end{table}
-
 
 \subsection{Experiment Results}
 
@@ -411,14 +415,6 @@ experiments tables are the following:
     \item   Eval.       is the total number of evaluations the algorithm executed. 
     \item   Time (sec)  is the total elapsed or wall clock time, in seconds. 
     \item   Eval/sec    is the calculated rate of evaluations per second.
-\end{itemize}
-
-Where:
-\begin{itemize}
-    \item[]	    F is the gravitational force acting between two objects.
-    \item[]	    m1 and m2 are the masses of the objects.
-    \item[]	    r is the distance between the centers of their masses.
-    \item[]	    G is the gravitational constant: 6.67430(15)×10−11 m3⋅kg−1⋅s−2.
 \end{itemize}
 
 
