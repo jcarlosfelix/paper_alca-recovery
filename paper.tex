@@ -142,8 +142,8 @@ set of solutions, with the cost of losing all evolution knowledge.
 
 The main contribution of this paper is to demonstrate that it is possible to
 evolve a population of individuals, similar to a Genetic Algorithm (GA), using
-a distributed, parallel, and asynchronous methodology by the algorithm
-implementation and testing. We improve the algorithm behaviour by solving
+a distributed, parallel, and asynchronous methodology by algorithm
+implementation and testing. We improve the algorithm behavior by solving
 population extinction caused by nature's pressure in the Animal Life Cycle
 Algorithm with one of the most promising alternatives: the projection of the
 Elite towards the Champion, where we compare the results obtained with the
@@ -151,13 +151,13 @@ latter and the random use of the more traditional alternatives (mutation and
 crossover), using classic benchmark functions for optimization for comparison.
 
 We present the description of the following sections in our paper. First, we
-illustrate our algorithm model, the problem found with the occasional
-population extinction and our proposed solution in
+illustrate our algorithm model, the encountered problem with the occasional
+population extinction, and our proposed solution in
 section~\ref{section.proposal}, followed by our experimental configuration and
 results in section~\ref{section.experiments}, where we continue to analyze and
 describe some of our research findings in section~\ref{section.discussion}. We
-finalize by presenting some inferences based on our experiments results in
-section~\ref{section.conclusions}.
+finalize by presenting some inferences based on the results of our experiments
+in section~\ref{section.conclusions}.
 
 
 \section{Proposal}
@@ -168,7 +168,7 @@ section~\ref{section.conclusions}.
 % use \sectionmark{}
 % to alter or adjust the section heading in the running head
 
-Our inspiration for this algorithm was found on the study and observation of
+Our inspiration for this algorithm was found in the study and observation of
 nature, using general abstraction to identify what most animal species have in
 common: the life cycle. We present an algorithm inspired by the biological
 life-cycle of animal species, which consists of several stages
@@ -237,7 +237,7 @@ In this article, we test various strategies to generate a new population to
 replace individuals that have already died (or were discarded) due to their
 aptitude, as happens in the life cycle. We previously used to generate a new
 random set of solutions, with the cost of losing all evolution knowledge. The
-strategy we describe on this paper uses elites to take advantage of the
+strategy we describe in this paper uses elites to take advantage of the
 historical evolution, especially the best individuals, where we look for the
 offspring of the elite set to be somewhat close to them. We use the golden
 ratio to compute the distance between new individuals in the population, making
@@ -248,14 +248,14 @@ extinction caused by nature's pressure in the Life Cycle algorithm: the
 projection of the historically best-found candidate solutions (Elite) towards
 the best-found candidate solution (Champion). This article proposes some
 strategies to carry out this operation, where the presented distribution
-strategy obtained best results.
+strategy obtained the best results.
 
 \subsubsection{How does it work?} Based on the historically best candidate
 solution and the elite set, we use the Golden Ratio (shown in
 Figure~\ref{fig.golden_ratio}) to compute the distance between new individuals
 in the population, making an improved distribution. It randomly selects a
 solution from the elite set and uses the Golden Ratio to compute multiple
-solutions against the best found candidate.
+solutions against the best-found candidate.
 
 \begin{figure}
     \centering
@@ -263,10 +263,9 @@ solutions against the best found candidate.
     \caption{Golden Ratio equation.} \label{fig.golden_ratio}
     \end{figure}
 
-
 This strategy is how we can calculate the projection of the historically
 best-found candidate solutions (Elite) towards the best-found candidate
-solution (Champion). To illustrate this concept we use
+solution (Champion). To illustrate this concept we include
 Figure~\ref{fig.elite_projection}, placing the Elite solution on the far right
 and the Champion solution on the left corner, where a higher number of new
 solutions will be closer to the Champion.
@@ -278,11 +277,11 @@ solutions will be closer to the Champion.
     \end{figure}
 
 This process generates new solutions that will be the new population set. It
-uses the Golden Ratio to progressively aproximate from an Elite solution
-towards the Champion. This strategy facilitates to find apparently hidden
-solutions, having an exploitation emphasis.
-Figure~\ref{fig.elite_projection_swarm} displays the projection of five Elite
-solutions (on the corners) towards the Champion (on the center).
+uses the Golden Ratio to progressively approximate from an Elite solution to
+the Champion. This strategy facilitates to find apparently hidden solutions,
+having an exploitation emphasis. Figure~\ref{fig.elite_projection_swarm}
+displays the projection of five Elite solutions (on the corners) towards the
+Champion (in the center).
 
 \begin{figure}
     \centering
@@ -293,7 +292,24 @@ solutions (on the corners) towards the Champion (on the center).
 \section{Experiments}
 \label{section.experiments}
 
-ALTO / HASTA AQUI VAMOS.
+As a proof-of-concept, we implemented the algorithm with Docker containers,
+where we compare the results obtained with the projection of the Elite towards
+the Champion strategy and the random use of the more traditional alternatives
+(such as mutation and crossover), using classic benchmark functions for
+optimization as implemented by the DEAP (Distributed Evolutionary Algorithms in
+Python) library \cite{fortin2012deap}.
+
+\subsection{Experimental Setup} 
+
+The alternatives to restart this new population are the creation of a new set
+of candidate solutions based on either: The mutation with uniform modification
+from the Elite or the historically best-found solution (Champion); Crossing the
+Champion with the Elite; The projection of the Elite towards the Champion;
+Based on random use of the previous alternatives.
+
+
+\subsection{ALTO / HASTA AQUI VAMOS}
+
 
 
 %----------------------------------------------------
