@@ -283,7 +283,7 @@ comparison.}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.65\textwidth]{img/fig_elite_projection.pdf}
-                \caption{Projection of the historically Elite solutions towards the Champion.} \label{fig.elite_projection}
+                \caption{Projection of an Elite solution (found on the right) towards the Champion (at the left).} \label{fig.elite_projection}
                 \end{figure}
 
             This process generates new solutions that will be the new population set. It
@@ -394,8 +394,16 @@ comparison.}
 
         \subsubsection{Ackley Benchmark Function Experiment}
 
-            The goal of our fist experiment was to have fun, while improving the graphics with best images. Please ignore this text, it's a reminder.
-
+            The goal of the first experiment was to confirm that this paper’s
+            proposed strategy obtained improved results over our basic
+            technique, which created a new population with a random generation
+            of a new set of candidate solutions. We chose Ackley as the first
+            Classic Benchmark Function for Optimization to test our algorithm
+            behavior, where Figure~\ref{fig.fun_ackley} shows its corresponding
+            Box and Whisker chart, and we summarized the results in
+            Table~\ref{tab.fun_ackley5} and Table~\ref{tab.fun_ackley10} (for
+            five and ten dimensions, respectively).
+            
             \begin{figure}
                 \includegraphics[width=0.99\linewidth, frame]{img/fig_fun_ackley.pdf}
                 \caption{Box and whisker chart for the Ackley Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_ackley}
