@@ -689,25 +689,8 @@ solution. For this experiment, we intentionally used delays (on the tenth of a
 second magnitude) to follow the Life-Cycle algorithm behavior on the console
 output. For this experiment, we compared the DEAP algorithm versus the
 Life-Cycle using ten processes (on containers) where we show the summarized
-results in Table~\ref{tab.experiment1}, and Figure~\ref{fig.experiment1} shows
+results in Table~\ref{tab.fun_ackley5}, and Figure~\ref{fig.fun_ackley} shows
 their Box and Whisker chart.
-
-\begin{table}[]
-    \centering        
-    \caption{Experiment 1 results: OneMax DEAP versus Life-Cycle (10 processes).}\label{tab.experiment1}
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-    \hline
-    Run & \multicolumn{4}{l|}{OneMax DEAP} & \multicolumn{4}{l|}{Life-Cycle (10P)} \\ \hline
-    1-60 & Last Gen. & Eval. & Time (sec) & Eval/sec & Last Gen. & Eval. & Time (sec) & Eval/sec \\ \hline
-    Avg. & 6.5 & 391 & 0.036 & 10,836 & 9.6 & 578 & 6.830 & 85 \\ \hline
-    \end{tabular}
-    \end{table}
-
-\begin{figure}
-    \fbox{\includegraphics[width=\textwidth]{img/fig6_experiment01_chart.pdf}}
-    \caption{Box and whisker chart for the Experiment 1: OneMax DEAP versus Life-Cycle.} \label{fig.experiment1}
-% You need to label axis y - JJ
-  \end{figure}
 
 
 \subsubsection{Experiment 2} The goal of our second experiment was to confirm
@@ -717,24 +700,8 @@ thousands of a second magnitude) to follow the Life-Cycle algorithm behavior.
 For this experiment, we only used tournament selection for the reproduction, on
 the first configuration running the Life-Cycle on ten processes, versus the
 second configuration where we reduced the processes to the minimum basic 5. We
-show the summarized results in Table~\ref{tab.experiment2}, and
-Figure~\ref{fig.experiment2} shows their Box and Whisker chart.
-
-\begin{table}[]
-    \centering        
-    \caption{Experiment 2 results, Life-Cycle Tournament selection: 10 versus 5 processes.}\label{tab.experiment2}
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-    \hline
-    Run & \multicolumn{4}{l|}{LifeCycle (Tourn. 10P)} & \multicolumn{4}{l|}{LifeCycle (Tourn. 5P)} \\ \hline
-    1-60 & Last Gen. & Eval. & Time (sec) & Eval/sec & Last Gen. & Eval. & Time (sec) & Eval/sec \\ \hline
-    Avg. & 7.2 & 434 & 0.740 & 587 & 8.2 & 495 & 0.826 & 599 \\ \hline
-    \end{tabular}
-    \end{table}
-
-\begin{figure}
-    \fbox{\includegraphics[width=\textwidth]{img/fig7_experiment02_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 2: Life-Cycle Tournament selection (10 versus 5 processes).} \label{fig.experiment2}
-    \end{figure}
+show the summarized results in Table~\ref{tab.fun_ackley5}, and
+Figure~\ref{fig.fun_ackley} shows their Box and Whisker chart.
 
 
 \subsubsection{Experiment 3} The goal of our third experiment was to follow and
@@ -745,24 +712,8 @@ the reproduction, on the first configuration running the Life-Cycle on six
 processes, two of whom was the Death process, versus the second configuration
 where we reduced the processes to the minimum (five) but increasing the (Death)
 goal approval range to 115. We show the summarized results in
-Table~\ref{tab.experiment3}, and Figure~\ref{fig.experiment3} shows their Box
+Table~\ref{tab.fun_ackley5}, and Figure~\ref{fig.fun_ackley} shows their Box
 and Whisker chart.
-
-\begin{table}[]
-    \centering        
-    \caption{Experiment 3 results, Life-Cycle Tournament: 6 processes (Death x2) versus 5 processes (80 to 115 goal).}\label{tab.experiment3}
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-    \hline
-    Run & \multicolumn{4}{l|}{LifeCycle (Tourn. 6P, Death x2)} & \multicolumn{4}{l|}{LifeCycle (Tourn. 5P, 80-115g)} \\ \hline
-    1-60 & Last Gen. & Eval. & Time (sec) & Eval/sec & Last Gen. & Eval. & Time (sec) & Eval/sec \\ \hline
-    Avg. & 8.0 & 483 & 0.846 & 571 & 6.4 & 384 & 0.695 & 553 \\ \hline
-    \end{tabular}
-    \end{table}
-
-\begin{figure}
-    \fbox{\includegraphics[width=\textwidth]{img/fig8_experiment03_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 3: Life-Cycle Tournament (6 processes double Death, versus 5 processes with an 80 to 115 goal approval).} \label{fig.experiment3}
-    \end{figure}
 
 
 \subsubsection{Experiment 4} The goal of our fourth and last experiment was to
@@ -773,26 +724,8 @@ OneMax DEAP implementation versus the Life-Cycle algorithm, only using
 tournament selection for the reproduction, with the Life-Cycle configuration
 running on the minimum (five) processes but increasing the (Death) goal
 approval range to 125. We show the summarized results in
-Table~\ref{tab.experiment4}, and Figure~\ref{fig.experiment4} shows their Box
+Table~\ref{tab.fun_ackley5}, and Figure~\ref{fig.fun_ackley} shows their Box
 and Whisker chart.
-
-\begin{table}[]
-    \centering        
-    \caption{Experiment 4 results, OneMax DEAP versus Life-Cycle Tournament: 5 processes (80 to 125 goal).}\label{tab.experiment4}
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-    \hline
-    Run & \multicolumn{4}{l|}{OneMax DEAP} & \multicolumn{4}{l|}{Life-Cycle (Tourn. 5P, 80-125g)} \\ \hline
-    1-60 & Last Gen. & Eval. & Time (sec) & Eval/sec & Last Gen. & Eval. & Time (sec) & Eval/sec \\ \hline
-    Avg. & 6.5 & 391 & 0.036 & 10,836 & 6.3 & 377 & 0.678 & 556 \\ \hline
-    \end{tabular}
-    \end{table}
-
-\begin{figure}
-    \fbox{\includegraphics[width=\textwidth]{img/fig9_experiment4_chart.pdf}}
-    \caption{Box and Whisker chart for the Experiment 4: OneMax DEAP versus Life-Cycle Tournament (5 processes with an 80 to 125 goal approval).} \label{fig.experiment4}
-    \end{figure}
-
-
 
 
 \begin{acknowledgement}
