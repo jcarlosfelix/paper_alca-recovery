@@ -302,12 +302,6 @@ the Champion strategy and the random use of the more traditional alternatives
 optimization as implemented by the DEAP (Distributed Evolutionary Algorithms in
 Python) library \cite{fortin2012deap}.
 
-The alternatives to restart this new population are the creation of a new set
-of candidate solutions based on either: The mutation with uniform modification
-from the Elite or the historically best-found solution (Champion); Crossing the
-Champion with the Elite; The projection of the Elite towards the Champion;
-Based on random use of the previous alternatives.
-
 \subsection{Experimental Setup} 
 
 The following tables show the configuration used to execute the experiments for
@@ -324,11 +318,11 @@ accordingly for each function.
 % To change the size of the font use \scriptsize or \tiny
 \begin{table}[]
     \scriptsize
-    \centering        
+    \centering
     \caption{Animal Life Cycle Algorithm (ALCA) General Configuration.}\label{tab.general_configuration}
     \begin{tabular}{@{}ll@{}}
     \toprule
-    \multicolumn{2}{l}{ALCA General Configuration} \\ \midrule
+    \multicolumn{2}{l}{\textbf{ALCA General Configuration}} \\ \midrule
     Function name & ALL \\
     Population & 500 \\
     Target error & 1.00E-08 \\
@@ -344,11 +338,11 @@ accordingly for each function.
 
 \begin{table}[]
     \scriptsize
-    \centering        
+    \centering
     \caption{Classic Benchmark Functions for Optimization Configuration.}\label{tab.benchmark_fun_config}
     \begin{tabular}{@{}llllllll@{}}
     \toprule
-    \multicolumn{8}{l}{Benchmark Configuration Setup} \\ \midrule
+    \multicolumn{8}{l}{\textbf{Benchmark Configuration Setup}} \\ \midrule
     Function name & Ackley & Bohachevsky & Griewank & Rastrigin & Sphere & Rosenbrock & Rosenbrock \\
     Dimensions & 5, 10 & 5, 10 & 5, 10 & 5, 10 & 5, 10 & 5 & 10 \\
     Max evaluations & 200,000 & 200,000 & 200,000 & 200,000 & 200,000 & 500,000 & 1,000,000 \\
@@ -361,17 +355,67 @@ accordingly for each function.
 
 \subsection{Experiment Results}
 
-For each experiment, we ran 60 independent executions per algorithm and
-recorded the following results: Last Generation, Total Evaluations, Time
-(seconds), Evaluations/second. The labels used on the results of our summarized
-experiments tables are the following:
+For each experiment, we ran 30 independent executions per algorithm and
+dimensions specified. We recorded the following results: best found error,
+standard deviation, total number of evaluations, and total elapsed time (in
+seconds). The labels used on the results of our summarized experiments tables
+are the following:
 
 \begin{itemize}
-    \item   Last Gen.   is the generation that found the solution.
-    \item   Eval.       is the total number of evaluations the algorithm executed. 
-    \item   Time (sec)  is the total elapsed or wall clock time, in seconds. 
-    \item   Eval/sec    is the calculated rate of evaluations per second.
+    \item   Error:       is the best found error (or best solution).
+    \item   St-Dev:      is the standard deviation calculated from the error. 
+    \item   Evals.:      is the total number of evaluations the algorithm executed.
+    \item   Time:        is the total elapsed or wall clock time, in seconds. 
 \end{itemize}
+
+The alternatives to restart this new population are the creation of a new set
+of candidate solutions based on either: 1. Crossing the Champion with the Elite;
+2. The mutation with uniform modification from the Elite; 3. The
+projection of the Elite towards the Champion; 4. Based on random use of the
+previous alternatives. We compared three strategies by grouping the previous
+alternatives in the following:
+
+\begin{itemize}
+    \item   Xover Mutation:      Crossing the Champion with the Elite, and the mutation with uniform modification from the Elite.
+    \item   Elite Projection:    The projection of the Elite towards the Champion. 
+    \item   All Random:          Based on random use of the previous alternatives.
+\end{itemize}
+
+\subsubsection{Ackley Benchmark Function Experiment}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig_fun_ackley.pdf}
+    \caption{Box and whisker chart for the Ackley Benchmark Function, 5 vs 10 Dimensions comparison.} \label{fig.fun_ackley}
+    \end{figure}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Ackley Benchmark Function summarized experiments table for 5 Dimensions.}\label{tab.benchmark_fun_ackley5}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Ackley Function - 5 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 8.69E-08 & 1.36E-08 & 46,331 & 49.9 \\
+    \textbf{Elite Projection} & 6.33E-08 & 2.70E-08 & 13,811 & 18.1 \\
+    \textbf{All Random} & 6.78E-08 & 2.55E-08 & 30,236 & 32.8 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Ackley Benchmark Function summarized experiments table for 10 Dimensions.}\label{tab.benchmark_fun_ackley10}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Ackley Function - 10 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 9.35E-08 & 5.93E-09 & 104,842 & 111.7 \\
+    \textbf{Elite Projection} & 5.11E-08 & 3.13E-08 & 16,019 & 20.1 \\
+    \textbf{All Random} & 6.89E-08 & 2.75E-08 & 43,631 & 46.3 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
 
 
 \subsection{ALTO / HASTA AQUI VAMOS}
