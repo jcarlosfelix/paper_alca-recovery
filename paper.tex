@@ -159,9 +159,6 @@ describe some of our research findings in section~\ref{section.discussion}. We
 finalize by presenting some inferences based on our experiments results in
 section~\ref{section.conclusions}.
 
-%PREVIOUSLY / FROM THE FIRST CHAPTER
-%We designed our algorithm using observation, analysis, and abstraction in nature to identify what most species in the animal kingdom have in common, where individuals of a population that best adapt to the environment have greater chances of survival, reproduction, and improvement of the species. Imagining as if the task of writing these rules of evolution was in our hands, questioning how we could solve it?
-%Like nature, we identified what most species have in common in the life cycle. Our algorithm works on a constantly evolving population, experiencing the stages that all living beings undergo \cite{read1968system}: being born, growing up, reproducing, and dying, where each of these stages will be processes (of our algorithm) that randomly affect the population individuals, emulating the organic way.
 
 \section{Proposal}
 \label{section.proposal}
@@ -171,137 +168,161 @@ section~\ref{section.conclusions}.
 % use \sectionmark{}
 % to alter or adjust the section heading in the running head
 
-Many of the publications with the most influence on our research
-~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio}
-propose a cloud-native optimization architecture that features population-based
-algorithms. They present ideas such as those mentioned in Figure~\ref{fig.background},
-which planted the seed of thought of our current paper.
+Our inspiration for this algorithm was found on the study and observation of
+nature, using general abstraction to identify what most animal species have in
+common: the life cycle. We present an algorithm inspired by the biological
+life-cycle of animal species, which consists of several stages
+\cite{read1968system}: birth, growth, reproduction, and death. The combination
+of those processes results in evolution. As in nature, we intend to execute all
+these stages in parallel and asynchronously on a constantly evolving
+population.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=80mm]{img/fig1_background.pdf}
-    \caption{These ideas planted the seed of thought in our algorithm proposal.} \label{fig.background}
-    \end{figure}
-
-Our main inspiration for this algorithm was born from the study and observation
-of nature, where many successful optimization algorithms have previously found
-their own. Our focus was not on a single animal species but all of them, using
-general abstraction to identify what those species have in common. 
-
-Some questions in our train of thought were: How does nature work? Is evolution
-real? How do we enforce natural selection in evolution? What is the role of the
-attraction between couples on reproduction? How much of a factor is the
-attraction's role in the evolution of the species? What is the role of death in
-all of this? How much of an impact does death have on the evolution of a
-species? How do we include those ideas into our algorithm?
-
-In our analysis, we consider a broad animal spectrum, from bacteria to humans
-and lions, finding our inspiration on the biological Life Cycle of the animal
-species, which consists of several stages \cite{read1968system}: birth, growth,
-reproduction, and death. As in nature, we intend to execute all these stages in
-parallel and asynchronously on a population that evolves constantly. The
-combination of those processes is what we call evolution.
-
-One of the main challenges when designing the algorithm was how to capture the
-essence of life by reflecting a population evolution?. In our minds, it was
-clear this task requires a combination of simultaneous working forces that
-influences the population improvement over time. Our strategy was simple:
-divide and conquer, looking into the clouds. Enter cloud-computing: previous
-cloud-computing algorithms have proven successful results working in
-optimization problems \cite{valdez2021container,garcia2021event}.
-
-We turned back to our genetic algorithms knowledge, mixed with our inspiration
-and cloud computing, and designed the algorithm with the quest to divide the
-processing workload among multiple computers. This strategy would also make it
-possible to run our algorithm as a cloud service. Theoretically, one
-consequence of the workload distribution is to obtain lower execution times.
+\subsection{Algorithm Model}
 
 This algorithm seeks to imitate the natural life cycle, where new individuals
-are born at any moment and mature over time, where they age and suffer
+are born at any moment and mature over time, where they age and then suffer
 mutations throughout their lives. In reproduction, couples match by mutual
-attraction, and they may have offspring. Death can happen to everyone: from a
-newborn to an aged adult, where the individual's fitness will impact their
-longevity. The general model concept is shown in Figure~\ref{fig.proposal}. The general
-flowchart for the Life-Cycle algorithm is described in Figure~\ref{fig.flowchart}.
+attraction. Death can happen to everyone: from a newborn to an aged adult,
+where the individual's fitness will impact their longevity. We display the
+general model concept in Figure~\ref{fig.algorithm_model}.
+
+\subsubsection{Birth} Birth is the first process of our algorithm, and it is
+responsible for the initial generation of individuals. This algorithm starts
+with a randomly generated population.
+
+\subsubsection{Growth} As in nature, all individuals constantly grow, mature,
+or age. With increasing age, individuals may lose strength but may also gain
+knowledge to solve problems. We represent this with a possible mutation in each
+increment of age.
+
+\subsubsection{Reproduction} This process will select random pairs of
+individuals to evaluate their attraction as a couple, where this attraction
+will depend on fitness. The better individual's fitness, the more attractive it
+will be. Not all couples will be compatible, so reproduction will not always be
+possible. When the breeding is successful, a new pair of individuals will be
+born (offspring).
+
+\subsubsection{Death} The death stage represents the challenges and adversities
+that life presents. This process evaluates the individual resistance to survive
+in the environment. The better fitness the individual has will increase its
+chances of survival. As time progresses, the demands of nature will also
+increase, pushing for only the best individuals to survive.
 
 \begin{figure}
     \centering
-    \includegraphics[width=70mm]{img/fig2_proposal.pdf}
-    \caption{Algorithm model inspired by the animal species' biological Life-Cycle.} \label{fig.proposal}
+    \includegraphics[width=80mm]{img/fig_algorithm_model.pdf}
+    \caption{Animal Life Cycle Algorithm model.} \label{fig.algorithm_model}
     \end{figure}
+
+\subsection{Problem}
+
+In this algorithm's reproduction process, we find mating couples by mutual
+attraction, where sometimes individuals won't procreate offspring because of
+the mate's low appeal. As time passes, the environment could kill its
+individuals either because they have low fitness or age, leading to extinction,
+meaning there are no more individuals in the population left to reproduce. When
+this condition presents, if evaluations are available and termination
+conditions enable the algorithm to continue the search, it is required to
+create a new set of individuals. We illustrate the general flowchart for the
+Life-Cycle algorithm in Figure~\ref{fig.flowchart}.
 
 \begin{figure}
-    \includegraphics[width=\textwidth]{img/fig4_flowchart.pdf}
-    \caption{Life-Cycle algorithm general flowchart.} \label{fig.flowchart}
-% Several terms are introduced here that are not defined in the text, like "champion list" and "attraction" - JJ
+    \includegraphics[width=\textwidth]{img/fig_flowchart.pdf}
+    \caption{Animal Life-Cycle Algorithm general flowchart.} \label{fig.flowchart}
     \end{figure}
-    
 
-\subsection{Birth}
+\subsection{Proposed Solution}
 
-This algorithm starts with a randomly generated population, where the processes
-will interact with the population independently. This means that at any given
-time, any individual can experience any of these processes. Birth is the first
-process of our algorithm, and it is responsible for the initial generation of
-individuals.
+In this article, we test various strategies to generate a new population to
+replace individuals that have already died (or were discarded) due to their
+aptitude, as happens in the life cycle. We previously used to generate a new
+random set of solutions, with the cost of losing all evolution knowledge. The
+strategy we describe on this paper uses elites to take advantage of the
+historical evolution, especially the best individuals, where we look for the
+offspring of the elite set to be somewhat close to them. We use the golden
+ratio to compute the distance between new individuals in the population, making
+an improved distribution.
 
-\subsection{Growth}
+We propose one promising alternative to restart the population, to solve
+extinction caused by nature's pressure in the Life Cycle algorithm: the
+projection of the historically best-found candidate solutions (Elite) towards
+the best-found candidate solution (Champion). This article proposes some
+strategies to carry out this operation, where the presented distribution
+strategy obtained best results.
 
-As in nature, all individuals constantly grow, mature, or age. With increasing
-age, individuals may lose strength but also gain more knowledge to solve
-problems. We represent this with a possible mutation in each increment of age.
-The growth process will take an individual to assess whether it's ready to
-mature and undergo changes. % Not learning?  JJ
-
-\subsection{Reproduction}
-
-The attraction of a couple will depend on fitness: the better individual's
-fitness, the more attractive it will be, making it easier to find mating
-matches. This process will be taking random pairs of individuals to evaluate
-their attraction as a couple, to try to breed; when the gestation is
-successful, a new pair of individuals will be born (as the offspring). Not all
-couples will be compatible, so reproduction will not always be possible, but
-the problem arises: how to quantify the attraction between two individuals?
-
-We could have used several strategies to evaluate this attraction. Considering
-this algorithm takes a similar focus as the study of bacteria growth in
-microbiology, where we can observe and analyze the evolution of a population
-over time. As in nature' most species, the bigger a specimen is, the more
-attractive it is to its mating candidates. To be consistent with both ideas in
-% Er... not really. It depends on health, mainly - JJ
-our algorithm, we use the equation of Newton's Law of Universal Gravitation (1)
-to calculate the attraction between two individuals, where we visualize the
-individual fitness as its mass when using the equation. In previous work,
-Newton's Law of Universal Gravitation has shown success in helping to solve
-optimization problems \cite{sanchez2014fuzzy,rashedi2009gsa}.
+\subsubsection{How does it work?} Based on the historically best candidate
+solution and the elite set, we use the Golden Ratio (shown in
+Figure~\ref{fig.golden_ratio}) to compute the distance between new individuals
+in the population, making an improved distribution. It randomly selects a
+solution from the elite set and uses the Golden Ratio to compute multiple
+solutions against the best found candidate.
 
 \begin{figure}
     \centering
-    \includegraphics[width=50mm]{img/fig3_newtonslaw.pdf}
-    \caption{Newton's Law of Universal Gravitation.} \label{fig.newtonslaw}
+    \includegraphics[width=25mm]{img/fig_golden_ratio.pdf}
+    \caption{Golden Ratio equation.} \label{fig.golden_ratio}
     \end{figure}
 
-Where:
-\begin{itemize}
-    \item[]	    F is the gravitational force acting between two objects.
-    \item[]	    m1 and m2 are the masses of the objects.
-    \item[]	    r is the distance between the centers of their masses.
-    \item[]	    G is the gravitational constant: 6.67430(15)×10−11 m3⋅kg−1⋅s−2.
-\end{itemize}
 
-% to be honest, I find this a bit far fetched. How do you define mass? is it related to fitness? - JJ
+This strategy is how we can calculate the projection of the historically
+best-found candidate solutions (Elite) towards the best-found candidate
+solution (Champion). To illustrate this concept we use
+Figure~\ref{fig.elite_projection}, placing the Elite solution on the far right
+and the Champion solution on the left corner, where a higher number of new
+solutions will be closer to the Champion.
 
-\subsection{Death}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{img/fig_elite_projection.pdf}
+    \caption{Projection of the historically Elite solutions towards the Champion.} \label{fig.elite_projection}
+    \end{figure}
 
-The death stage represents the challenges and adversities that life presents to
-overcome. This process evaluates the individual resistance to survive in the
-environment. The better fitness the individual has will increase its chances of
-survival. As time progresses, the demands of nature will also increase, pushing
-for only the best individuals to survive.
+This process generates new solutions that will be the new population set. It
+uses the Golden Ratio to progressively aproximate from an Elite solution
+towards the Champion. This strategy facilitates to find apparently hidden
+solutions, having an exploitation emphasis.
+Figure~\ref{fig.elite_projection_swarm} displays the projection of five Elite
+solutions (on the corners) towards the Champion (on the center).
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/fig_elite_projection_swarm.pdf}
+    \caption{Projection of five Elite solutions towards the Champion, results in a mini-swarm.} \label{fig.elite_projection_swarm}
+    \end{figure}
 
 \section{Experiments}
 \label{section.experiments}
+
+ALTO / HASTA AQUI VAMOS.
+
+
+%----------------------------------------------------
+%----------------------------------------------------
+%PREVIOUSLY / FROM THE FIRST CHAPTER
+%We designed our algorithm using observation, analysis, and abstraction in nature to identify what most species in the animal kingdom have in common, where individuals of a population that best adapt to the environment have greater chances of survival, reproduction, and improvement of the species. Imagining as if the task of writing these rules of evolution was in our hands, questioning how we could solve it?
+%Like nature, we identified what most species have in common in the life cycle. Our algorithm works on a constantly evolving population, experiencing the stages that all living beings undergo \cite{read1968system}: being born, growing up, reproducing, and dying, where each of these stages will be processes (of our algorithm) that randomly affect the population individuals, emulating the organic way.
+%Many of the publications with the most influence on our research ~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio} propose a cloud-native optimization architecture that features population-based algorithms. They present ideas such as those mentioned in Figure~\ref{fig.background}, which planted the seed of thought of our current paper.
+%Some questions in our train of thought were: How does nature work? Is evolution real? How do we enforce natural selection in evolution? What is the role of the attraction between couples on reproduction? How much of a factor is the attraction's role in the evolution of the species? What is the role of death in all of this? How much of an impact does death have on the evolution of a species? How do we include those ideas into our algorithm?
+%One of the main challenges when designing the algorithm was how to capture the essence of life by reflecting a population evolution?. In our minds, it was clear this task requires a combination of simultaneous working forces that influences the population improvement over time. Our strategy was simple: divide and conquer, looking into the clouds. Enter cloud-computing: previous cloud-computing algorithms have proven successful results working in optimization problems \cite{valdez2021container,garcia2021event}.
+%We turned back to our genetic algorithms knowledge, mixed with our inspiration and cloud computing, and designed the algorithm with the quest to divide the processing workload among multiple computers. This strategy would also make it possible to run our algorithm as a cloud service. Theoretically, one consequence of the workload distribution is to obtain lower execution times.
+%----------------------------------------------------
+%Birth: This algorithm starts with a randomly generated population, where the processes will interact with the population independently. This means that at any given time, any individual can experience any of these processes. Birth is the first process of our algorithm, and it is responsible for the initial generation of individuals.
+%Growth: As in nature, all individuals constantly grow, mature, or age. With increasing age, individuals may lose strength but also gain more knowledge to solve problems. We represent this with a possible mutation in each increment of age. The growth process will take an individual to assess whether it's ready to mature and undergo changes. 
+%Reproduction: The attraction of a couple will depend on fitness: the better individual's fitness, the more attractive it will be, making it easier to find mating matches. This process will be taking random pairs of individuals to evaluate their attraction as a couple, to try to breed; when the gestation is successful, a new pair of individuals will be born (as the offspring). Not all couples will be compatible, so reproduction will not always be possible, but the problem arises: how to quantify the attraction between two individuals?
+%------------- We could have used several strategies to evaluate this attraction. Considering this algorithm takes a similar focus as the study of bacteria growth in microbiology, where we can observe and analyze the evolution of a population over time. As in nature' most species, the bigger a specimen is, the more attractive it is to its mating candidates. To be consistent with both ideas in our algorithm, we use the equation of Newton's Law of Universal Gravitation (1) to calculate the attraction between two individuals, where we visualize the individual fitness as its mass when using the equation. In previous work, Newton's Law of Universal Gravitation has shown success in helping to solve optimization problems \cite{sanchez2014fuzzy,rashedi2009gsa}.
+%Death: The death stage represents the challenges and adversities that life presents to overcome. This process evaluates the individual resistance to survive in the environment. The better fitness the individual has will increase its chances of survival. As time progresses, the demands of nature will also increase, pushing for only the best individuals to survive.
+%----------------------------------------------------
+
+
+
+
+
+
+
+
+
+\section{Another Section}
+\label{section.another_section}
 
 As a proof-of-concept, we implemented the algorithm with Docker containers by
 solving the OneMax problem to compare it with a traditional GA algorithm using
@@ -374,6 +395,14 @@ experiments tables are the following:
     \item   Eval.       is the total number of evaluations the algorithm executed. 
     \item   Time (sec)  is the total elapsed or wall clock time, in seconds. 
     \item   Eval/sec    is the calculated rate of evaluations per second.
+\end{itemize}
+
+Where:
+\begin{itemize}
+    \item[]	    F is the gravitational force acting between two objects.
+    \item[]	    m1 and m2 are the masses of the objects.
+    \item[]	    r is the distance between the centers of their masses.
+    \item[]	    G is the gravitational constant: 6.67430(15)×10−11 m3⋅kg−1⋅s−2.
 \end{itemize}
 
 
