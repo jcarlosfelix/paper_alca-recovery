@@ -385,13 +385,13 @@ alternatives in the following:
 
 \begin{figure}
     \includegraphics[width=\textwidth]{img/fig_fun_ackley.pdf}
-    \caption{Box and whisker chart for the Ackley Benchmark Function, 5 vs 10 Dimensions comparison.} \label{fig.fun_ackley}
+    \caption{Box and whisker chart for the Ackley Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_ackley}
     \end{figure}
 
 \begin{table}[]
     \scriptsize
     \centering
-    \caption{Ackley Benchmark Function summarized experiments table for 5 Dimensions.}\label{tab.benchmark_fun_ackley5}
+    \caption{Ackley Benchmark Function summarized experiments table for 5 Dimensions.}\label{tab.fun_ackley5}
     \begin{tabular}{@{}lllll@{}}
     \toprule
     \multicolumn{5}{l}{\textbf{Ackley Function - 5 Dimensions}} \\ \midrule
@@ -405,7 +405,7 @@ alternatives in the following:
 \begin{table}[]
     \scriptsize
     \centering
-    \caption{Ackley Benchmark Function summarized experiments table for 10 Dimensions.}\label{tab.benchmark_fun_ackley10}
+    \caption{Ackley Benchmark Function summarized experiments table for 10 Dimensions.}\label{tab.fun_ackley10}
     \begin{tabular}{@{}lllll@{}}
     \toprule
     \multicolumn{5}{l}{\textbf{Ackley Function - 10 Dimensions}} \\ \midrule
@@ -417,10 +417,199 @@ alternatives in the following:
     \end{table}
 
 
+\subsubsection{Bohachevsky Benchmark Function Experiment}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig_fun_bohachevsky.pdf}
+    \caption{Box and whisker chart for the Bohachevsky Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_bohachevsky}
+    \end{figure}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Bohachevsky Benchmark Function summarized experiments table for 5 Dimensions.}\label{tab.fun_bohachevsky5}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Bohachevsky - 5 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 7.28E-08 & 2.20E-08 & 15,010 & 24.2 \\
+    \textbf{Elite Projection} & 4.51E-08 & 2.94E-08 & 8,266 & 12.6 \\
+    \textbf{All Random} & 6.16E-08 & 2.85E-08 & 11,998 & 21.7 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Bohachevsky Benchmark Function summarized experiments table for 10 Dimensions.}\label{tab.fun_bohachevsky10}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Bohachevsky - 10   Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 8.66E-08 & 1.38E-08 & 40,166 & 44.4 \\
+    \textbf{Elite Projection} & 3.80E-08 & 3.34E-08 & 8,506 & 12.9 \\
+    \textbf{All Random} & 5.34E-08 & 3.76E-08 & 19,537 & 26.8 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+\subsubsection{Griewank Benchmark Function Experiment}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig_fun_griewank.pdf}
+    \caption{Box and whisker chart for the Griewank Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_griewank}
+    \end{figure}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Griewank Benchmark Function summarized experiments table for 5 Dimensions.}\label{tab.fun_griewank5}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Griewank - 5 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 6.92E-08 & 2.40E-08 & 44,566 & 48.3 \\
+    \textbf{Elite Projection} & 3.77E-08 & 2.74E-08 & 16,412 & 20.1 \\
+    \textbf{All Random} & 5.63E-08 & 2.99E-08 & 35,761 & 38.5 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Griewank Benchmark Function summarized experiments table for 10 Dimensions.}\label{tab.fun_griewank10}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Griewank - 10 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 8.07E-08 & 1.39E-08 & 92,885 & 100.0 \\
+    \textbf{Elite Projection} & 4.21E-08 & 3.40E-08 & 13,534 & 17.3 \\
+    \textbf{All Random} & 5.08E-08 & 3.54E-08 & 40,544 & 52.5 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+\subsubsection{Rastrigin Benchmark Function Experiment}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig_fun_rastrigin.pdf}
+    \caption{Box and whisker chart for the Rastrigin Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_rastrigin}
+    \end{figure}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Rastrigin Benchmark Function summarized experiments table for 5 Dimensions.}\label{tab.fun_rastrigin5}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Rastrigin - 5 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 7.85E-08 & 1.59E-08 & 22,322 & 34.1 \\
+    \textbf{Elite Projection} & 4.42E-08 & 3.26E-08 & 10,860 & 14.8 \\
+    \textbf{All Random} & 5.66E-08 & 2.81E-08 & 21,122 & 35.0 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Rastrigin Benchmark Function summarized experiments table for 10 Dimensions.}\label{tab.fun_rastrigin10}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Rastrigin - 10   Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 8.56E-08 & 1.23E-08 & 53,579 & 58.7 \\
+    \textbf{Elite Projection} & 3.17E-08 & 2.57E-08 & 8,704 & 13.0 \\
+    \textbf{All Random} & 5.00E-08 & 3.16E-08 & 24,376 & 27.4 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+
+\subsubsection{Sphere Benchmark Function Experiment}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{img/fig_fun_sphere.pdf}
+    \caption{Box and whisker chart for the Sphere Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_sphere}
+    \end{figure}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Sphere Benchmark Function summarized experiments table for 5 Dimensions.}\label{tab.fun_sphere5}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Sphere - 5 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 7.82E-08 & 1.65E-08 & 11,312 & 14.5 \\
+    \textbf{Elite Projection} & 3.60E-08 & 3.27E-08 & 7,056 & 10.9 \\
+    \textbf{All Random} & 6.14E-08 & 2.79E-08 & 9,158 & 12.2 \\ \bottomrule
+    \end{tabular}
+    \end{table}
+
+\begin{table}[]
+    \scriptsize
+    \centering
+    \caption{Sphere Benchmark Function summarized experiments table for 10 Dimensions.}\label{tab.fun_sphere10}
+    \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \multicolumn{5}{l}{\textbf{Function Sphere - 10 Dimensions}} \\ \midrule
+     & \textbf{Error} & \textbf{St-Dev} & \textbf{Evals.} & \textbf{Time} \\
+    \textbf{Xover Mutation} & 8.39E-08 & 1.45E-08 & 30,769 & 34.4 \\
+    \textbf{Elite Projection} & 4.28E-08 & 3.06E-08 & 9,236 & 13.3 \\
+    \textbf{All Random} & 5.32E-08 & 3.38E-08 & 21,465 & 26.3 \\ \bottomrule
+    \end{tabular}
+    \end{table}
 
 \subsection{ALTO / HASTA AQUI VAMOS}
 
+\section{Discussion}
+\label{section.discussion}
 
+At some crucial moments during our research, we got the feeling we were doing
+nature reverse engineering. One strategy was to let our imagination run wild
+and go for the simple solution. One of our earlier experiment's findings was to
+find balance, like the yin and yang, between death and reproduction.
+
+In our experiments, we found that when solving simple problems, the cost of
+communication between containers can become a factor to increase the total
+performance time, even though, we believe that the opposite must also be true.
+When solving complex problems, distributing the work on multiple resources
+should reduce throughput time, making the communication cost negligible.
+
+We must acknowledge the performance time of the DEAP library
+\cite{fortin2012deap} is highly efficient and short, due in part because the
+processing work execution is on a single processor with multiple cores, where
+the communication time is nearly non-existent. In contrast, our algorithm
+implementation requires a minimum of five containers and a message queue
+server. Even though the container work has proven to be very effective and
+efficient \cite{merelo2016performance,valdez2021container}, we must consider
+some time was added to our experiments by the minimal delays (in the thousands
+of a second magnitude) we used to keep the process execution relatively random,
+to mimic how the life-cycle stages work in nature \cite{read1968system}. As
+future work, we could test the Life-Cycle algorithm behavior by eliminating all
+remaining delays.
+
+This scheme allows for multiple parameter's fine tuning, granting us the
+freedom to experiment with different selection and reproduction strategies
+simultaneously, which will impact how fast it finds the solution and the
+obtained quality.
+
+
+\section{Conclusions}
+\label{section.conclusions}
+
+We implemented the algorithm with Docker containers by solving the OneMax
+problem comparing it with a traditional (sequential) GA algorithm, where it
+showed favorable and promising results. To further validate this work, we could
+use control or some more complex and demanding problem that requires computing
+real numbers \cite{stanley2002evolving,miikkulainen2019evolving}.
+
+As the complexity of problems increases, it is essential to have a scalable,
+replicable, and fault-tolerant model that uses collaborative techniques to work
+in the cloud, where multiple resources will be communicating asynchronously.
+This research has shown that it is possible to evolve a population of
+individuals, similar to a Genetic Algorithm (GA), using a distributed,
+parallel, and asynchronous methodology.
 
 %----------------------------------------------------
 %----------------------------------------------------
@@ -445,22 +634,7 @@ alternatives in the following:
 \section{Another Section}
 \label{section.another_section}
 
-\subsection{Experiment Configuration}
-
-\subsection{Experiment Results}
-
-For each experiment, we ran 60 independent executions per algorithm and
-recorded the following results: Last Generation, Total Evaluations, Time
-(seconds), Evaluations/second. The labels used on the results of our summarized
-experiments tables are the following:
-
-\begin{itemize}
-    \item   Last Gen.   is the generation that found the solution.
-    \item   Eval.       is the total number of evaluations the algorithm executed. 
-    \item   Time (sec)  is the total elapsed or wall clock time, in seconds. 
-    \item   Eval/sec    is the calculated rate of evaluations per second.
-\end{itemize}
-
+\subsection{Experiment Example}
 
 \subsubsection{Experiment 1} The goal of our first OneMax experiment was to
 make sure our Life-Cycle algorithm worked as expected, converging on the
@@ -572,54 +746,7 @@ and Whisker chart.
     \end{figure}
 
 
-\section{Discussion}
-\label{section.discussion}
 
-At some crucial moments during our research, we got the feeling we were doing
-nature reverse engineering. One strategy was to let our imagination run wild
-and go for the simple solution. One of our earlier experiment's findings was to
-find balance, like the yin and yang, between death and reproduction.
-
-In our experiments, we found that when solving simple problems, the cost of
-communication between containers can become a factor to increase the total
-performance time, even though, we believe that the opposite must also be true.
-When solving complex problems, distributing the work on multiple resources
-should reduce throughput time, making the communication cost negligible.
-
-We must acknowledge the performance time of the DEAP library
-\cite{fortin2012deap} is highly efficient and short, due in part because the
-processing work execution is on a single processor with multiple cores, where
-the communication time is nearly non-existent. In contrast, our algorithm
-implementation requires a minimum of five containers and a message queue
-server. Even though the container work has proven to be very effective and
-efficient \cite{merelo2016performance,valdez2021container}, we must consider
-some time was added to our experiments by the minimal delays (in the thousands
-of a second magnitude) we used to keep the process execution relatively random,
-to mimic how the life-cycle stages work in nature \cite{read1968system}. As
-future work, we could test the Life-Cycle algorithm behavior by eliminating all
-remaining delays.
-
-This scheme allows for multiple parameter's fine tuning, granting us the
-freedom to experiment with different selection and reproduction strategies
-simultaneously, which will impact how fast it finds the solution and the
-obtained quality.
-
-
-\section{Conclusions}
-\label{section.conclusions}
-
-We implemented the algorithm with Docker containers by solving the OneMax
-problem comparing it with a traditional (sequential) GA algorithm, where it
-showed favorable and promising results. To further validate this work, we could
-use control or some more complex and demanding problem that requires computing
-real numbers \cite{stanley2002evolving,miikkulainen2019evolving}.
-
-As the complexity of problems increases, it is essential to have a scalable,
-replicable, and fault-tolerant model that uses collaborative techniques to work
-in the cloud, where multiple resources will be communicating asynchronously.
-This research has shown that it is possible to evolve a population of
-individuals, similar to a Genetic Algorithm (GA), using a distributed,
-parallel, and asynchronous methodology.
 
 \begin{acknowledgement}
     This paper has been supported in part by projects DeepBio (TIN2017--85727--C4--2--P) and TecNM Project 11356.21\@.
