@@ -31,6 +31,9 @@
 \usepackage{graphicx}       % To frame graphic images
 \usepackage[export]{adjustbox}
 
+\usepackage[section]{placeins} % Forces an image to be displayed in it's section
+
+
 % see the list of further useful packages
 % in the Reference Guide
 
@@ -255,44 +258,48 @@ comparison.}
         strategies to carry out this operation, where the presented distribution
         strategy obtained the best results.
 
-        \subsubsection{How does it work?} Based on the historically best candidate
-        solution and the elite set, we use the Golden Ratio (shown in
-        Figure~\ref{fig.golden_ratio}) to compute the distance between new individuals
-        in the population, making an improved distribution. It randomly selects a
-        solution from the elite set and uses the Golden Ratio to compute multiple
-        solutions against the best-found candidate.
+        \subsubsection{How does it work?} 
+            
+            Based on the historically best candidate
+            solution and the elite set, we use the Golden Ratio (shown in
+            Figure~\ref{fig.golden_ratio}) to compute the distance between new individuals
+            in the population, making an improved distribution. It randomly selects a
+            solution from the elite set and uses the Golden Ratio to compute multiple
+            solutions against the best-found candidate.
 
-        \begin{figure}
-            \centering
-            \includegraphics[width=25mm]{img/fig_golden_ratio.pdf}
-            \caption{Golden Ratio equation.} \label{fig.golden_ratio}
-            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width=25mm]{img/fig_golden_ratio.pdf}
+                \caption{Golden Ratio equation.} \label{fig.golden_ratio}
+                \end{figure}
 
-        This strategy is how we can calculate the projection of the historically
-        best-found candidate solutions (Elite) towards the best-found candidate
-        solution (Champion). To illustrate this concept we include
-        Figure~\ref{fig.elite_projection}, placing the Elite solution on the far right
-        and the Champion solution on the left corner, where a higher number of new
-        solutions will be closer to the Champion.
+            This strategy is how we can calculate the projection of the historically
+            best-found candidate solutions (Elite) towards the best-found candidate
+            solution (Champion). To illustrate this concept we include
+            Figure~\ref{fig.elite_projection}, placing the Elite solution on the far right
+            and the Champion solution on the left corner, where a higher number of new
+            solutions will be closer to the Champion.
 
-        \begin{figure}
-            \centering
-            \includegraphics[width=0.65\textwidth]{img/fig_elite_projection.pdf}
-            \caption{Projection of the historically Elite solutions towards the Champion.} \label{fig.elite_projection}
-            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.65\textwidth]{img/fig_elite_projection.pdf}
+                \caption{Projection of the historically Elite solutions towards the Champion.} \label{fig.elite_projection}
+                \end{figure}
 
-        This process generates new solutions that will be the new population set. It
-        uses the Golden Ratio to progressively approximate from an Elite solution to
-        the Champion. This strategy facilitates to find apparently hidden solutions,
-        having an exploitation emphasis. Figure~\ref{fig.elite_projection_swarm}
-        displays the projection of five Elite solutions (on the corners) towards the
-        Champion (in the center).
+            This process generates new solutions that will be the new population set. It
+            uses the Golden Ratio to progressively approximate from an Elite solution to
+            the Champion. This strategy facilitates to find apparently hidden solutions,
+            having an exploitation emphasis. Figure~\ref{fig.elite_projection_swarm}
+            displays the projection of five Elite solutions (on the corners) towards the
+            Champion (in the center).
 
-        \begin{figure}
-            \centering
-            \includegraphics[width=0.85\textwidth]{img/fig_elite_projection_swarm.pdf}
-            \caption{Projection of five Elite solutions towards the Champion, results in a mini-swarm.} \label{fig.elite_projection_swarm}
-            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.85\textwidth]{img/fig_elite_projection_swarm.pdf}
+                \caption{Projection of five Elite solutions towards the Champion, results in a mini-swarm.} \label{fig.elite_projection_swarm}
+                \end{figure}
+            
+            \FloatBarrier
 
 \section{Experiments}
     \label{section.experiments}
@@ -419,6 +426,8 @@ comparison.}
                 \textbf{All Random} & 6.89E-08 & 2.75E-08 & 43,631 & 46.3 \\ \bottomrule
                 \end{tabular}
                 \end{table}
+            
+            \FloatBarrier
 
 
         \subsubsection{Bohachevsky Benchmark Function Experiment}
@@ -455,6 +464,8 @@ comparison.}
                 \textbf{All Random} & 5.34E-08 & 3.76E-08 & 19,537 & 26.8 \\ \bottomrule
                 \end{tabular}
                 \end{table}
+            
+            \FloatBarrier
 
 
         \subsubsection{Griewank Benchmark Function Experiment}
@@ -492,6 +503,8 @@ comparison.}
                 \end{tabular}
                 \end{table}
 
+            \FloatBarrier
+
 
         \subsubsection{Rastrigin Benchmark Function Experiment}
 
@@ -527,6 +540,8 @@ comparison.}
                 \textbf{All Random} & 5.00E-08 & 3.16E-08 & 24,376 & 27.4 \\ \bottomrule
                 \end{tabular}
                 \end{table}
+            
+            \FloatBarrier
 
 
         \subsubsection{Sphere Benchmark Function Experiment}
@@ -563,6 +578,8 @@ comparison.}
                 \textbf{All Random} & 5.32E-08 & 3.38E-08 & 21,465 & 26.3 \\ \bottomrule
                 \end{tabular}
                 \end{table}
+
+            \FloatBarrier
 
 
         \subsubsection{Rosenbrock Benchmark Function Experiment}
@@ -605,6 +622,8 @@ comparison.}
                 \textbf{All Random} & 4.27E-02 & 6.02E-02 & 952,038 & 1,147.8 \\ \bottomrule
                 \end{tabular}
                 \end{table}
+            
+            \FloatBarrier
 
 
     \subsection{ALTO / HASTA AQUI VAMOS}
