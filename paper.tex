@@ -588,6 +588,17 @@ comparison.}
 
         \subsubsection{Sphere Benchmark Function Experiment}
 
+            For our fifth experiment we chose the Sphere Classic Benchmark
+            Function for Optimization. Even though the sphere function is
+            considered one of the simplest to solve, the same behavior was
+            consistent for the algorithm, where it showed a reduced number of
+            evaluations and execution time. We can confirm this affirmation
+            with the results shown in this experiment.
+            Figure~\ref{fig.fun_sphere} displays its corresponding Box and
+            Whisker chart, where we summarized the results in
+            Table~\ref{tab.fun_sphere5} and Table~\ref{tab.fun_sphere10} (for
+            five and ten dimensions, respectively).
+
             \begin{figure}
                 \includegraphics[width=0.99\linewidth, frame]{img/fig_fun_sphere.pdf}
                 \caption{Box and whisker chart for the Sphere Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_sphere}
@@ -625,6 +636,8 @@ comparison.}
 
 
         \subsubsection{Rosenbrock Benchmark Function Experiment}
+
+            AQUI.
 
             \begin{figure}
                 \includegraphics[width=0.99\linewidth, frame]{img/fig_fun_rosenbrock_5d.pdf}
@@ -719,42 +732,6 @@ This research has shown that it is possible to evolve a population of
 individuals, similar to a Genetic Algorithm (GA), using a distributed,
 parallel, and asynchronous methodology.
 
-%----------------------------------------------------
-%----------------------------------------------------
-%PREVIOUSLY / FROM THE FIRST CHAPTER
-%We designed our algorithm using observation, analysis, and abstraction in nature to identify what most species in the animal kingdom have in common, where individuals of a population that best adapt to the environment have greater chances of survival, reproduction, and improvement of the species. Imagining as if the task of writing these rules of evolution was in our hands, questioning how we could solve it?
-%Like nature, we identified what most species have in common in the life cycle. Our algorithm works on a constantly evolving population, experiencing the stages that all living beings undergo \cite{read1968system}: being born, growing up, reproducing, and dying, where each of these stages will be processes (of our algorithm) that randomly affect the population individuals, emulating the organic way.
-%Many of the publications with the most influence on our research ~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio} propose a cloud-native optimization architecture that features population-based algorithms. They present ideas such as those mentioned in Figure~\ref{fig.background}, which planted the seed of thought of our current paper.
-%Some questions in our train of thought were: How does nature work? Is evolution real? How do we enforce natural selection in evolution? What is the role of the attraction between couples on reproduction? How much of a factor is the attraction's role in the evolution of the species? What is the role of death in all of this? How much of an impact does death have on the evolution of a species? How do we include those ideas into our algorithm?
-%One of the main challenges when designing the algorithm was how to capture the essence of life by reflecting a population evolution?. In our minds, it was clear this task requires a combination of simultaneous working forces that influences the population improvement over time. Our strategy was simple: divide and conquer, looking into the clouds. Enter cloud-computing: previous cloud-computing algorithms have proven successful results working in optimization problems \cite{valdez2021container,garcia2021event}.
-%We turned back to our genetic algorithms knowledge, mixed with our inspiration and cloud computing, and designed the algorithm with the quest to divide the processing workload among multiple computers. This strategy would also make it possible to run our algorithm as a cloud service. Theoretically, one consequence of the workload distribution is to obtain lower execution times.
-%----------------------------------------------------
-%Birth: This algorithm starts with a randomly generated population, where the processes will interact with the population independently. This means that at any given time, any individual can experience any of these processes. Birth is the first process of our algorithm, and it is responsible for the initial generation of individuals.
-%Growth: As in nature, all individuals constantly grow, mature, or age. With increasing age, individuals may lose strength but also gain more knowledge to solve problems. We represent this with a possible mutation in each increment of age. The growth process will take an individual to assess whether it's ready to mature and undergo changes. 
-%Reproduction: The attraction of a couple will depend on fitness: the better individual's fitness, the more attractive it will be, making it easier to find mating matches. This process will be taking random pairs of individuals to evaluate their attraction as a couple, to try to breed; when the gestation is successful, a new pair of individuals will be born (as the offspring). Not all couples will be compatible, so reproduction will not always be possible, but the problem arises: how to quantify the attraction between two individuals?
-%------------- We could have used several strategies to evaluate this attraction. Considering this algorithm takes a similar focus as the study of bacteria growth in microbiology, where we can observe and analyze the evolution of a population over time. As in nature' most species, the bigger a specimen is, the more attractive it is to its mating candidates. To be consistent with both ideas in our algorithm, we use the equation of Newton's Law of Universal Gravitation (1) to calculate the attraction between two individuals, where we visualize the individual fitness as its mass when using the equation. In previous work, Newton's Law of Universal Gravitation has shown success in helping to solve optimization problems \cite{sanchez2014fuzzy,rashedi2009gsa}.
-%Death: The death stage represents the challenges and adversities that life presents to overcome. This process evaluates the individual resistance to survive in the environment. The better fitness the individual has will increase its chances of survival. As time progresses, the demands of nature will also increase, pushing for only the best individuals to survive.
-%----------------------------------------------------
-%One strategic difference in our algorithm implementation is the reproduction process, which is flexible to work in parallel with multiple couple selection methods, for example, tournament selection, random selection (Closed Reproduction process), and couple match by creating a new mating individual (Open Reproduction process). We use many combinations of the containerized processes, up to the minimum number required to obtain good results. Figure~\ref{fig.processes_containers} shows a comparison of only two alternatives for the implementation of the algorithm. Our experimentation started with a configuration of ten processes and ended in five, shown on the left and right sides of Fig.~\ref{fig.processes_containers}, respectively.
-%In our four experiments, we needed to match or balance the experimentation parameters according to the specifications of the algorithm used by the DEAP library. This is to be able to verify if our algorithm would also converge on the solutions in a similar number of evaluations and execution time. Table~\ref{tab.configuration} shows the OneMax initial configuration for DEAP and Life-Cycle experiment.
-%----------------------------------------------------
-
-\section{Another Section}
-\label{section.another_section}
-
-\subsection{Experiment Example}
-
-\subsubsection{Experiment 4} The goal of our fourth and last experiment was to
-follow and study the behavior of the Life-Cycle algorithm that continued
-converging on the solution. For this experiment, we remained using minimal
-delays (thousands of a second magnitude). For this experiment, we compared the
-OneMax DEAP implementation versus the Life-Cycle algorithm, only using
-tournament selection for the reproduction, with the Life-Cycle configuration
-running on the minimum (five) processes but increasing the (Death) goal
-approval range to 125. We show the summarized results in
-Table~\ref{tab.fun_ackley5}, and Figure~\ref{fig.fun_ackley} shows their Box
-and Whisker chart.
-
 
 \begin{acknowledgement}
     This paper has been supported in part by projects DeepBio (TIN2017--85727--C4--2--P) and TecNM Project 11356.21\@.
@@ -768,3 +745,24 @@ and Whisker chart.
 \bibliography{bib/bibliografia.bib}
 
 \end{document}
+
+%----------------------------------------------------
+%----------------------------------------------------
+% PREVIOUSLY / FROM THE FIRST CHAPTER
+% We designed our algorithm using observation, analysis, and abstraction in nature to identify what most species in the animal kingdom have in common, where individuals of a population that best adapt to the environment have greater chances of survival, reproduction, and improvement of the species. Imagining as if the task of writing these rules of evolution was in our hands, questioning how we could solve it?
+% Like nature, we identified what most species have in common in the life cycle. Our algorithm works on a constantly evolving population, experiencing the stages that all living beings undergo \cite{read1968system}: being born, growing up, reproducing, and dying, where each of these stages will be processes (of our algorithm) that randomly affect the population individuals, emulating the organic way.
+% Many of the publications with the most influence on our research ~\cite{valdez2021container,garcia2021event,merelo2016performance,merelo2016nodio} propose a cloud-native optimization architecture that features population-based algorithms. They present ideas such as those mentioned in Figure~\ref{fig.background}, which planted the seed of thought of our current paper.
+% Some questions in our train of thought were: How does nature work? Is evolution real? How do we enforce natural selection in evolution? What is the role of the attraction between couples on reproduction? How much of a factor is the attraction's role in the evolution of the species? What is the role of death in all of this? How much of an impact does death have on the evolution of a species? How do we include those ideas into our algorithm?
+% One of the main challenges when designing the algorithm was how to capture the essence of life by reflecting a population evolution?. In our minds, it was clear this task requires a combination of simultaneous working forces that influences the population improvement over time. Our strategy was simple: divide and conquer, looking into the clouds. Enter cloud-computing: previous cloud-computing algorithms have proven successful results working in optimization problems \cite{valdez2021container,garcia2021event}.
+% We turned back to our genetic algorithms knowledge, mixed with our inspiration and cloud computing, and designed the algorithm with the quest to divide the processing workload among multiple computers. This strategy would also make it possible to run our algorithm as a cloud service. Theoretically, one consequence of the workload distribution is to obtain lower execution times.
+%----------------------------------------------------
+% Birth: This algorithm starts with a randomly generated population, where the processes will interact with the population independently. This means that at any given time, any individual can experience any of these processes. Birth is the first process of our algorithm, and it is responsible for the initial generation of individuals.
+% Growth: As in nature, all individuals constantly grow, mature, or age. With increasing age, individuals may lose strength but also gain more knowledge to solve problems. We represent this with a possible mutation in each increment of age. The growth process will take an individual to assess whether it's ready to mature and undergo changes. 
+% Reproduction: The attraction of a couple will depend on fitness: the better individual's fitness, the more attractive it will be, making it easier to find mating matches. This process will be taking random pairs of individuals to evaluate their attraction as a couple, to try to breed; when the gestation is successful, a new pair of individuals will be born (as the offspring). Not all couples will be compatible, so reproduction will not always be possible, but the problem arises: how to quantify the attraction between two individuals?
+% ............. We could have used several strategies to evaluate this attraction. Considering this algorithm takes a similar focus as the study of bacteria growth in microbiology, where we can observe and analyze the evolution of a population over time. As in nature' most species, the bigger a specimen is, the more attractive it is to its mating candidates. To be consistent with both ideas in our algorithm, we use the equation of Newton's Law of Universal Gravitation (1) to calculate the attraction between two individuals, where we visualize the individual fitness as its mass when using the equation. In previous work, Newton's Law of Universal Gravitation has shown success in helping to solve optimization problems \cite{sanchez2014fuzzy,rashedi2009gsa}.
+% Death: The death stage represents the challenges and adversities that life presents to overcome. This process evaluates the individual resistance to survive in the environment. The better fitness the individual has will increase its chances of survival. As time progresses, the demands of nature will also increase, pushing for only the best individuals to survive.
+% ----------------------------------------------------
+% One strategic difference in our algorithm implementation is the reproduction process, which is flexible to work in parallel with multiple couple selection methods, for example, tournament selection, random selection (Closed Reproduction process), and couple match by creating a new mating individual (Open Reproduction process). We use many combinations of the containerized processes, up to the minimum number required to obtain good results. Figure~\ref{fig.processes_containers} shows a comparison of only two alternatives for the implementation of the algorithm. Our experimentation started with a configuration of ten processes and ended in five, shown on the left and right sides of Fig.~\ref{fig.processes_containers}, respectively.
+% In our four experiments, we needed to match or balance the experimentation parameters according to the specifications of the algorithm used by the DEAP library. This is to be able to verify if our algorithm would also converge on the solutions in a similar number of evaluations and execution time. Table~\ref{tab.configuration} shows the OneMax initial configuration for DEAP and Life-Cycle experiment.
+%----------------------------------------------------
+%----------------------------------------------------
