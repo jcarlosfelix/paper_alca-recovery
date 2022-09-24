@@ -540,6 +540,16 @@ comparison.}
 
         \subsubsection{Rastrigin Benchmark Function Experiment}
 
+            This experiment's goal was to follow and study the behavior of our
+            proposed strategy, to repeat the results in the same order as
+            expected, in a reduced number of both time and evaluations. We
+            selected Rastrigin Classic Benchmark Function for Optimization for
+            this experiment. Figure~\ref{fig.fun_rastrigin} shows its
+            corresponding Box and Whisker chart, where we summarized the
+            results in Table~\ref{tab.fun_rastrigin5} and
+            Table~\ref{tab.fun_rastrigin10} (for five and ten dimensions,
+            respectively).
+
             \begin{figure}
                 \includegraphics[width=0.99\linewidth, frame]{img/fig_fun_rastrigin.pdf}
                 \caption{Box and whisker chart for the Rastrigin Benchmark Function, 5 vs 10 Dimensions.} \label{fig.fun_rastrigin}
@@ -733,39 +743,6 @@ parallel, and asynchronous methodology.
 \label{section.another_section}
 
 \subsection{Experiment Example}
-
-\subsubsection{Experiment 1} The goal of our first OneMax experiment was to
-make sure our Life-Cycle algorithm worked as expected, converging on the
-solution. For this experiment, we intentionally used delays (on the tenth of a
-second magnitude) to follow the Life-Cycle algorithm behavior on the console
-output. For this experiment, we compared the DEAP algorithm versus the
-Life-Cycle using ten processes (on containers) where we show the summarized
-results in Table~\ref{tab.fun_ackley5}, and Figure~\ref{fig.fun_ackley} shows
-their Box and Whisker chart.
-
-
-\subsubsection{Experiment 2} The goal of our second experiment was to confirm
-the Life-Cycle algorithm continued working as expected, converging on the
-solution. For this experiment, we reduced the time used on delays (now on the
-thousands of a second magnitude) to follow the Life-Cycle algorithm behavior.
-For this experiment, we only used tournament selection for the reproduction, on
-the first configuration running the Life-Cycle on ten processes, versus the
-second configuration where we reduced the processes to the minimum basic 5. We
-show the summarized results in Table~\ref{tab.fun_ackley5}, and
-Figure~\ref{fig.fun_ackley} shows their Box and Whisker chart.
-
-
-\subsubsection{Experiment 3} The goal of our third experiment was to follow and
-study the behavior of the Life-Cycle algorithm that continued converging on the
-solution. For this experiment, we remained using minimal delays (thousands of a
-second magnitude). For this experiment, we only used tournament selection for
-the reproduction, on the first configuration running the Life-Cycle on six
-processes, two of whom was the Death process, versus the second configuration
-where we reduced the processes to the minimum (five) but increasing the (Death)
-goal approval range to 115. We show the summarized results in
-Table~\ref{tab.fun_ackley5}, and Figure~\ref{fig.fun_ackley} shows their Box
-and Whisker chart.
-
 
 \subsubsection{Experiment 4} The goal of our fourth and last experiment was to
 follow and study the behavior of the Life-Cycle algorithm that continued
