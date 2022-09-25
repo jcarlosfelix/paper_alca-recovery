@@ -690,45 +690,41 @@ comparison.}
             \FloatBarrier
 
 \section{Discussion}
-\label{section.discussion}
+    \label{section.discussion}
 
+    Imagine being an astronaut on a mission repairing a space station in the
+    middle of space. Suddenly, a block of asteroids hits the craft, and you
+    lose your oxygen tank while the explosion pushes you away. From afar, you
+    see the area where your tank might be, covered with something similar to a
+    gas leaked from the station that blocks all visibility. Finding the tank is
+    the only hope to return to your main ship some miles away. The oxygen
+    reserve from your suit is running out, and there are only a couple of
+    minutes left. Now hold your breath in real life and think, what strategy
+    will you choose to search for your tank? We repeated this mental exercise
+    several times until we found the best solution (or blacked out).
+
+    If your life depended on it, would you choose a Genetic Algorithm, a
+    variant of a Particle Swarm Optimization Algorithm, or another? We searched
+    for a way to mix both, at least in some way, take the main idea or concepts
+    from them and make them work together. We strongly believe it is possible
+    to combine the features, as previous work has proven to obtain outstanding
+    results \cite{garcia2015evospace,garcia2021event,valdez2021container,valdez2021swarm}.
+    Our goal was to create a swarm out of the best individuals found in
+    evolution. We probably have a long way to go, but at least we are getting
+    promising results. From our experiments, all six Classic Benchmark
+    Functions for Optimization (Ackley, Bohachevsky, Griewank, Rastrigin,
+    Sphere, and Rosenbrock) proved the same behavior for the Animal Life Cycle
+    Algorithm: finding the expected solution in a reduced number of evaluations
+    and less execution time.
+
+
+\section{Conclusions}
+\label{section.conclusions}
 
 ***********************
 ALTO / HASTA AQUI VAMOS
 ***********************
 
-At some crucial moments during our research, we got the feeling we were doing
-nature reverse engineering. One strategy was to let our imagination run wild
-and go for the simple solution. One of our earlier experiment's findings was to
-find balance, like the yin and yang, between death and reproduction.
-
-In our experiments, we found that when solving simple problems, the cost of
-communication between containers can become a factor to increase the total
-performance time, even though, we believe that the opposite must also be true.
-When solving complex problems, distributing the work on multiple resources
-should reduce throughput time, making the communication cost negligible.
-
-We must acknowledge the performance time of the DEAP library
-\cite{fortin2012deap} is highly efficient and short, due in part because the
-processing work execution is on a single processor with multiple cores, where
-the communication time is nearly non-existent. In contrast, our algorithm
-implementation requires a minimum of five containers and a message queue
-server. Even though the container work has proven to be very effective and
-efficient \cite{merelo2016performance,valdez2021container}, we must consider
-some time was added to our experiments by the minimal delays (in the thousands
-of a second magnitude) we used to keep the process execution relatively random,
-to mimic how the life-cycle stages work in nature \cite{read1968system}. As
-future work, we could test the Life-Cycle algorithm behavior by eliminating all
-remaining delays.
-
-This scheme allows for multiple parameter's fine tuning, granting us the
-freedom to experiment with different selection and reproduction strategies
-simultaneously, which will impact how fast it finds the solution and the
-obtained quality.
-
-
-\section{Conclusions}
-\label{section.conclusions}
 
 We implemented the algorithm with Docker containers by solving the OneMax
 problem comparing it with a traditional (sequential) GA algorithm, where it
@@ -776,4 +772,10 @@ parallel, and asynchronous methodology.
 % One strategic difference in our algorithm implementation is the reproduction process, which is flexible to work in parallel with multiple couple selection methods, for example, tournament selection, random selection (Closed Reproduction process), and couple match by creating a new mating individual (Open Reproduction process). We use many combinations of the containerized processes, up to the minimum number required to obtain good results. Figure~\ref{fig.processes_containers} shows a comparison of only two alternatives for the implementation of the algorithm. Our experimentation started with a configuration of ten processes and ended in five, shown on the left and right sides of Fig.~\ref{fig.processes_containers}, respectively.
 % In our four experiments, we needed to match or balance the experimentation parameters according to the specifications of the algorithm used by the DEAP library. This is to be able to verify if our algorithm would also converge on the solutions in a similar number of evaluations and execution time. Table~\ref{tab.configuration} shows the OneMax initial configuration for DEAP and Life-Cycle experiment.
 %----------------------------------------------------
+%At some crucial moments during our research, we got the feeling we were doing nature reverse engineering. One strategy was to let our imagination run wild and go for the simple solution. One of our earlier experiment's findings was to find balance, like the yin and yang, between death and reproduction.
+%In our experiments, we found that when solving simple problems, the cost of communication between containers can become a factor to increase the total performance time, even though, we believe that the opposite must also be true. When solving complex problems, distributing the work on multiple resources should reduce throughput time, making the communication cost negligible.
+%We must acknowledge the performance time of the DEAP library \cite{fortin2012deap} is highly efficient and short, due in part because the processing work execution is on a single processor with multiple cores, where the communication time is nearly non-existent. In contrast, our algorithm implementation requires a minimum of five containers and a message queue server. Even though the container work has proven to be very effective and efficient \cite{merelo2016performance,valdez2021container}, we must consider some time was added to our experiments by the minimal delays (in the thousands of a second magnitude) we used to keep the process execution relatively random, to mimic how the life-cycle stages work in nature \cite{read1968system}. 
+%This scheme allows for multiple parameter's fine tuning, granting us the freedom to experiment with different selection and reproduction strategies simultaneously, which will impact how fast it finds the solution and the obtained quality. 
+%As future work, we could test the Life-Cycle algorithm behavior by eliminating all remaining delays.
 %----------------------------------------------------
+%---------------------------------------------------- garcia2015evospace  garcia2021event  valdez2021container  valdez2021swarm
