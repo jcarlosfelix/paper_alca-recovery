@@ -116,27 +116,28 @@ comparison.}
 \section{Introduction}
     \label{sec:1}
 
-    Bio-inspired algorithms have been very successful when used to solve complex
-    optimization problems
-    \cite{castillo2019comparative,valdez2021swarm,acherjee2020ultrasonic}, but as
-    their complexity increases so does the computing power required to execute them
-    \cite{ontiveros2018high}. One strategy to address this processing need is to
-    use distributed computing \cite{thain2005distributed}, or the resources
-    available in the cloud to help find the solution
-    \cite{garcia2013there,eshratifar2019bottlenet}. This strategy gives us
-    elasticity to increase (or reduce) the computing power to achieve a balance
-    according to the nature of the problem.
+    Biologically inspired algorithms have proven to be very effective when
+    solving complex optimization problems
+    \cite{castillo2019comparative,valdez2021swarm,acherjee2020ultrasonic}, but
+    the more challenging the problem, the more computing power it will require
+    to solve them \cite{ontiveros2018high}. One technique to manage this
+    processing power is to use distributed computing
+    \cite{thain2005distributed} or the cloud available resources to help solve
+    the problem \cite{garcia2013there,eshratifar2019bottlenet}. This strategy
+    allows adaptation of the computing power according to the problem's
+    complexity.
 
-    Most bio-inspired algorithms are traditionally designed with a sequential
-    (synchronous) perspective \cite{porto2018evolutionary,back1996evolutionary},
-    where each process must wait for the previous task to finish before continuing.
-    Our proposal presents an algorithm in its entirety as a native solution in the
-    cloud, fully distributed, where its processes are executed in parallel and
-    asynchronously. We designed the algorithm as a cloud-native solution using the
-    cloud available resources to divide the processing workload, among several
-    computers or running the algorithm as a cloud service. This technique makes it
-    easy to scale the computing power according to the complexity required by the
-    problem \cite{armbrust2010view}.
+    Most frequently, bio-inspired algorithms are developed with a sequential
+    (synchronous) perspective
+    \cite{porto2018evolutionary,back1996evolutionary}, where a process must
+    pause for the previous job to finish before continuing. In this research,
+    we present an algorithm built as a native cloud solution, totally
+    distributed, where its processes are executed asynchronously and in
+    parallel. We designed the algorithm using the cloud available resources to
+    distribute the processing workload among several computers or as a service
+    in the cloud. This strategy allows to elastically increase (or reduce) the
+    computing power according to the nature of the challenge
+    \cite{armbrust2010view}.
 
     In previous work, we introduced an algorithm inspired by the biological
     life-cycle of animal species. As in nature, population individuals grow older
@@ -725,22 +726,20 @@ comparison.}
     fine-tuning, facilitating the freedom to experiment with different
     alternatives to restart the population and solve extinction caused by
     nature's pressure, which will impact how quickly, and the quality of its
-    solution found. We compared the results obtained with the use of historical
+    found solution. We compared the results obtained with the use of historical
     elite projection versus other alternatives, using classic benchmark
     functions for optimization for comparison, where it showed favorable and
     promising results.
 
-    As the complexity of problems increases, it is essential to have a
-    scalable, replicable, and fault-tolerant model that uses collaborative
-    techniques to work in the cloud, where multiple resources will be
-    communicating asynchronously. This research has shown that it is possible
-    to evolve a population of individuals, similar to a Genetic Algorithm (GA),
-    using a distributed, parallel, and asynchronous methodology. To further
-    validate this work, we could use control or some more complex and demanding
+    As the nature of the challenge increases, it is indispensable to have an
+    elastic, scalable, and fault-tolerant model designed with cloud
+    collaboration processes, and asynchronous communication. We have proven
+    that it is possible to evolve a population, using a distributed, parallel,
+    and asynchronous strategy, inspired by the Genetic Algorithm (GA). To
+    further validate this work, we could use some more demanding (or control)
     problem that requires calculating real numbers
     \cite{stanley2002evolving,miikkulainen2019evolving}. We implemented the
     algorithm using Docker containers.
-
 
 \begin{acknowledgement}
     This paper has been supported in part by projects DeepBio (TIN2017--85727--C4--2--P) and TecNM Project 11356.21\@.
