@@ -124,7 +124,7 @@ comparison.}
     processing power is to use distributed computing
     \cite{thain2005distributed} or the cloud available resources to help solve
     the problem \cite{garcia2013there,eshratifar2019bottlenet}. This strategy
-    allows adaptation of the computing power according to the problem's
+    allows adaptating the required computing power according to the problem's
     complexity.
 
     Most frequently, bio-inspired algorithms are developed with a sequential
@@ -177,46 +177,56 @@ comparison.}
     % use \sectionmark{}
     % to alter or adjust the section heading in the running head
 
-    Our inspiration for this algorithm was found in the study and observation of
-    nature, using general abstraction to identify what most animal species have in
-    common: the life cycle. We present an algorithm inspired by the biological
-    life-cycle of animal species, which consists of several stages
-    \cite{read1968system}: birth, growth, reproduction, and death. The combination
-    of those processes results in evolution. As in nature, we intend to execute all
-    these stages in parallel and asynchronously on a constantly evolving
+    In previous work, we presented an algorithm inspired by nature, where we
+    used observation, analysis, and abstraction to model our algorithm based on
+    the generalization of the life cycle of animal species. Our algorithm, as
+    in nature, consists of four stages \cite{read1968system}: birth, growth,
+    reproduction, and death. One key concept of our idea is that combining
+    those processes results in evolution. We propose to execute all these
+    stages in parallel and asynchronously on a continuously evolving
     population.
+
 
     \subsection{Algorithm Model}
 
-        This algorithm seeks to imitate the natural life cycle, where new individuals
-        are born at any moment and mature over time, where they age and then suffer
-        mutations throughout their lives. In reproduction, couples match by mutual
-        attraction. Death can happen to everyone: from a newborn to an aged adult,
-        where the individual's fitness will impact their longevity. We display the
-        general model concept in Figure~\ref{fig.algorithm_model}.
+        Our algorithm's goal is to mimic the animal life cycle, where at any
+        given moment, new individuals are born to be part of the population and
+        participate in the collective evolution. As time passes, they grow
+        older and mature, suffering changes throughout their lives that we
+        chose to represent as mutations. In our analysis, we considered a
+        couple's attraction a fundamental factor in reproduction. We thought of
+        death's work to maintain balance in the population by enforcing the
+        survival of the fittest. As in life, death can happen to everyone: from
+        a newborn to the elderly, where fitness will determine the individual's
+        longevity. We display the general model concept in
+        Figure~\ref{fig.algorithm_model}.
 
-        \subsubsection{Birth} Birth is the first process of our algorithm, and it is
-        responsible for the initial generation of individuals. This algorithm starts
-        with a randomly generated population.
+        \subsubsection{Birth} Birth is the first step of the population's
+        evolution. For the algorithm representation, we begin with the
+        generation of a randomly set of individuals.
+        
+        \subsubsection{Growth} In our algorithm representation, there is a
+        direct correlation between elapsed time and the population's evolution.
+        For this to be possible in our proposal, all individuals must grow
+        older and change as time progresses. With each increment of age, an
+        individual may improve or deteriorate. We chose to manifest this idea
+        by performing a small mutation in each change.
 
-        \subsubsection{Growth} As in nature, all individuals constantly grow, mature,
-        or age. With increasing age, individuals may lose strength but may also gain
-        knowledge to solve problems. We represent this with a possible mutation in each
-        increment of age.
-
-        \subsubsection{Reproduction} This process will select random pairs of
-        individuals to evaluate their attraction as a couple, where this attraction
-        will depend on fitness. The better individual's fitness, the more attractive it
-        will be. Not all couples will be compatible, so reproduction will not always be
-        possible. When the breeding is successful, a new pair of individuals will be
-        born (offspring).
-
-        \subsubsection{Death} The death stage represents the challenges and adversities
-        that life presents. This process evaluates the individual resistance to survive
-        in the environment. The better fitness the individual has will increase its
-        chances of survival. As time progresses, the demands of nature will also
-        increase, pushing for only the best individuals to survive.
-
+        \subsubsection{Reproduction} In this step, we select a random pair of
+        individuals and evaluate their couple's attraction, where fitness will
+        be the decisive factor that impacts its value. The higher the fitness
+        of the individual, the more attractive it will appear to fellow
+        individuals. As a consequence of the previous concept, we can
+        anticipate that not all couples will produce offspring, meaning
+        reproduction will not always be successful.
+        
+        \subsubsection{Death} Death is the last step of the animal life cycle,
+        as in our algorithm. We chose death as a representation of all the
+        environmental challenges for survival, where its execution enforces the
+        survival of the fittest. As time progresses, so does increase nature's
+        level of danger. The better the individual fitness will increase its
+        chances of survival.
+        
         \begin{figure}
             \centering
             \includegraphics[width=80mm]{img/fig_algorithm_model.pdf}
@@ -740,6 +750,7 @@ comparison.}
     problem that requires calculating real numbers
     \cite{stanley2002evolving,miikkulainen2019evolving}. We implemented the
     algorithm using Docker containers.
+
 
 \begin{acknowledgement}
     This paper has been supported in part by projects DeepBio (TIN2017--85727--C4--2--P) and TecNM Project 11356.21\@.
