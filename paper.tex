@@ -124,34 +124,30 @@ comparison.}
     solving complex optimization problems
     \cite{castillo2019comparative,valdez2021swarm,acherjee2020ultrasonic}, but
     the more challenging the problem, the more computing power it will require
-    to solve them \cite{ontiveros2018high}. % You can add a comment on why it  
-    % requires more power, the main reason is the fitness evaluation function - M 
+    to solve them \cite{ontiveros2018high}. We consider the main reason it requires 
+    more computing power is related to the evaluation of the fitness function, 
+    which means calculating the solution to the real problem our algorithm is searching for. 
     One technique to manage this
-    processing power is to use distributed computing % To manage the processing power need or demand? - M
+    processing power demand is to use distributed computing
     \cite{thain2005distributed} or the cloud resources 
-    \cite{garcia2013there,eshratifar2019bottlenet}. This strategy
-    allows adaptating the required computing power according to the problem's
-    complexity.
-
+    \cite{garcia2013there,eshratifar2019bottlenet}. This strategy allows adaptation 
+    of the required computing need according to the problem's complexity.
+    
     Traditionally, bio-inspired algorithms are developed with a sequential
     (synchronous) perspective
     \cite{porto2018evolutionary,back1996evolutionary}, where a process must
-    pause for the previous task to finish before continuing.
-    % Add here a few current works that use the cloud and other distributed technologies - M
-    In this research,
-    we present a distributed algorithm built as a native cloud solution %, totally % fully, but this is hard to maintain - M
-    % distributed
-    , where its processes are executed asynchronously and in
-    parallel. We designed the algorithm using the cloud available resources to
-    distribute the processing workload among several computers or as a service
-    in the cloud. 
-    % The paragraph above is to repetitive, consider removing -  M
+    pause for the previous task to finish before continuing. 
+    Some architectures address this issue \cite{valdez2021container,garcia2015evospace,merelo2016nodio} 
+    by working on the cloud and finding solutions on distributed technologies.
+    In this research, we present a distributed algorithm totally built as a 
+    native cloud solution, where its processes execute asynchronously and in 
+    parallel, managing the processing workload among several computers.  
     This strategy allows to elastically increase (or reduce) the
     computing power according to the nature of the challenge
     \cite{armbrust2010view}.
 
     In previous work, we introduced an algorithm inspired by the biological % Add the reference - M
-    life-cycle of animal species. As in nature, population individuals grow older
+    life-cycle of animal species. As in nature, population individuals grow older % \cite{Felix-Saul2022}
     and age. In this algorithm's reproduction process, couples must match by mutual
     attraction, where sometimes individuals won't procreate offspring because of
     the mate's low appeal. As time passes, the environment kills its individuals
