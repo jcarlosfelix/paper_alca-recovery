@@ -89,6 +89,8 @@ we compare the results obtained with the latter and the random use of all the
 alternatives, using classic benchmark functions for optimization for
 comparison.}
 
+
+
 \abstract{In previous work, we introduced an algorithm inspired by the
 biological Life Cycle of animal species, consisting of the stages: birth,
 growth, reproduction, and death. As in nature, population individuals grow
@@ -122,17 +124,21 @@ comparison.}
     solving complex optimization problems
     \cite{castillo2019comparative,valdez2021swarm,acherjee2020ultrasonic}, but
     the more challenging the problem, the more computing power it will require
-    to solve them \cite{ontiveros2018high}. One technique to manage this
-    processing power is to use distributed computing
-    \cite{thain2005distributed} or the cloud available resources to help solve
-    the problem \cite{garcia2013there,eshratifar2019bottlenet}. This strategy
+    to solve them \cite{ontiveros2018high}. % You can add a comment on why it  
+    % requires more power, the main reason is the fitness evaluation function - M 
+    One technique to manage this
+    processing power is to use distributed computing % To manage the processing power need or demand? - M
+    \cite{thain2005distributed} or the cloud resources 
+    \cite{garcia2013there,eshratifar2019bottlenet}. This strategy
     allows adaptating the required computing power according to the problem's
     complexity.
 
-    Most frequently, bio-inspired algorithms are developed with a sequential
+    Traditionally, bio-inspired algorithms are developed with a sequential
     (synchronous) perspective
     \cite{porto2018evolutionary,back1996evolutionary}, where a process must
-    pause for the previous job to finish before continuing. In this research,
+    pause for the previous task to finish before continuing.
+    % Add here a few current works that use the cloud and other distributed technologies - M
+    In this research,
     we present an algorithm built as a native cloud solution, totally
     distributed, where its processes are executed asynchronously and in
     parallel. We designed the algorithm using the cloud available resources to
@@ -141,27 +147,33 @@ comparison.}
     computing power according to the nature of the challenge
     \cite{armbrust2010view}.
 
-    In previous work, we introduced an algorithm inspired by the biological
+    In previous work, we introduced an algorithm inspired by the biological % Add the reference - M
     life-cycle of animal species. As in nature, population individuals grow older
     and age. In this algorithm's reproduction process, couples must match by mutual
     attraction, where sometimes individuals won't procreate offspring because of
     the mate's low appeal. As time passes, the environment kills its individuals
     either because of low fitness or age, causing occasional population extinction.
+    % Just to be sure explain a bit more what we mean by extinsion. - M
     When this condition presents itself, it is required to create a new population
-    to continue evolution (restart). We previously used to generate a new random
+    to continue evolution (restart). 
+    % Maybe you do it later, but explain what is a restart precisely 
+    We previously used to generate a new random % In a previous work (reference) - M
     set of solutions, with the cost of losing all evolution knowledge.
 
     The main contribution of this paper is to demonstrate that it is possible to
     evolve a population of individuals, similar to a Genetic Algorithm (GA), using
     a distributed, parallel, and asynchronous methodology by algorithm
-    implementation and testing. We improve the algorithm behavior by solving
-    population extinction caused by nature's pressure in the Animal Life Cycle
+    implementation and testing.
+    % The main contribution is not this, is the restarting method? - M 
+    We improve the algorithm behavior by solving
+    population extinction caused by nature's pressure in the Animal Life Cycle % This is more a contribution - M
     Algorithm with one of the most promising alternatives: the projection of the
     Elite towards the Champion, where we compare the results obtained with the
     latter and the random use of the more traditional alternatives (mutation and
     crossover), using classic benchmark functions for optimization for comparison.
 
-    We present the description of the following sections in our paper. First, we
+    We present the description of the following sections in our paper. First, we % This paper is organized as follows - M 
+
     illustrate our algorithm model, the encountered problem with the occasional
     population extinction, and our proposed solution in
     section~\ref{section.proposal}, followed by our experimental configuration and
@@ -763,7 +775,9 @@ comparison.}
 % BibTeX users should specify bibliography style 'splncs04'.
 % References will then be sorted and formatted in the correct style.
 %
-\bibliographystyle{splncs04}
+
+\bibliographystyle{splncs03_unsrt}
+%\bibliographystyle{splncs04}
 \bibliography{bib/bibliografia.bib}
 
 \end{document}
