@@ -177,23 +177,29 @@ comparison.}
     % use \sectionmark{}
     % to alter or adjust the section heading in the running head
 
-    Our inspiration for this algorithm was found in the study and observation of
-    nature, using general abstraction to identify what most animal species have in
-    common: the life cycle. We present an algorithm inspired by the biological
-    life-cycle of animal species, which consists of several stages
-    \cite{read1968system}: birth, growth, reproduction, and death. The combination
-    of those processes results in evolution. As in nature, we intend to execute all
-    these stages in parallel and asynchronously on a constantly evolving
+    In previous work, we presented an algorithm inspired by nature, where we
+    used observation, analysis, and abstraction to model our algorithm based on
+    the generalization of the life cycle of animal species. Our algorithm, as
+    in nature, consists of four stages \cite{read1968system}: birth, growth,
+    reproduction, and death. One key concept of our idea is that combining
+    those processes results in evolution. We propose to execute all these
+    stages in parallel and asynchronously on a continuously evolving
     population.
+
 
     \subsection{Algorithm Model}
 
-        This algorithm seeks to imitate the natural life cycle, where new individuals
-        are born at any moment and mature over time, where they age and then suffer
-        mutations throughout their lives. In reproduction, couples match by mutual
-        attraction. Death can happen to everyone: from a newborn to an aged adult,
-        where the individual's fitness will impact their longevity. We display the
-        general model concept in Figure~\ref{fig.algorithm_model}.
+        Our algorithm's goal is to mimic the animal life cycle, where at any
+        given moment, new individuals are born to be part of the population and
+        participate in the collective evolution. As time passes, they grow
+        older and mature, suffering changes throughout their lives that we
+        chose to represent as mutations. In our analysis, we considered a
+        couple's attraction a fundamental factor in reproduction. We thought of
+        death's work to maintain balance in the population by enforcing the
+        survival of the fittest. As in life, death can happen to everyone: from
+        a newborn to the elderly, where fitness will determine the individual's
+        longevity. We display the general model concept in
+        Figure~\ref{fig.algorithm_model}.
 
         \subsubsection{Birth} Birth is the first process of our algorithm, and it is
         responsible for the initial generation of individuals. This algorithm starts
