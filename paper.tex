@@ -139,11 +139,14 @@ comparison.}
     pause for the previous task to finish before continuing.
     % Add here a few current works that use the cloud and other distributed technologies - M
     In this research,
-    we present an algorithm built as a native cloud solution, totally
-    distributed, where its processes are executed asynchronously and in
+    we present a distributed algorithm built as a native cloud solution %, totally % fully, but this is hard to maintain - M
+    % distributed
+    , where its processes are executed asynchronously and in
     parallel. We designed the algorithm using the cloud available resources to
     distribute the processing workload among several computers or as a service
-    in the cloud. This strategy allows to elastically increase (or reduce) the
+    in the cloud. 
+    % The paragraph above is to repetitive, consider removing -  M
+    This strategy allows to elastically increase (or reduce) the
     computing power according to the nature of the challenge
     \cite{armbrust2010view}.
 
@@ -182,26 +185,26 @@ comparison.}
     finalize by presenting some inferences based on the results of our experiments
     in section~\ref{section.conclusions}.
 
-
+    % If we are not going to add a State of the Art section, we need to mention other 
+    % methods in the Introduction. - M
 \section{Proposal}
     \label{section.proposal}
-    % Always give a unique label
-    % and use \ref{<label>} for cross-references
-    % and \cite{<label>} for bibliographic references
-    % use \sectionmark{}
-    % to alter or adjust the section heading in the running head
 
-    In previous work, we presented an algorithm inspired by nature, where we
-    used observation, analysis, and abstraction to model our algorithm based on
+    In previous work, we presented an algorithm inspired by nature, where we % Reference
+    % used observation, analysis, and abstraction to 
+    model our algorithm based on
     the generalization of the life cycle of animal species. Our algorithm, as
     in nature, consists of four stages \cite{read1968system}: birth, growth,
     reproduction, and death. One key concept of our idea is that combining
-    those processes results in evolution. We propose to execute all these
+    those processes evolves the population. We propose to execute all these
     stages in parallel and asynchronously on a continuously evolving
     population.
 
 
     \subsection{Algorithm Model}
+        
+        % Start by stating the similarities with a GA, in the sense that 
+        % all individuals have a genotype (chromosome)that is a list of values.  - M
 
         Our algorithm's goal is to mimic the animal life cycle, where at any
         given moment, new individuals are born to be part of the population and
@@ -214,6 +217,8 @@ comparison.}
         a newborn to the elderly, where fitness will determine the individual's
         longevity. We display the general model concept in
         Figure~\ref{fig.algorithm_model}.
+        % I do not like that image, is not very clear. We are confused by the 
+        % similarity with Venn diagrams. Maybe is better to put boxes and arrows. - M
 
         \subsubsection{Birth} Birth is the first step of the population's
         evolution. For the algorithm representation, we begin with the
@@ -258,6 +263,7 @@ comparison.}
         conditions enable the algorithm to continue the search, it is required to
         create a new set of individuals. We illustrate the general flowchart for the
         Life-Cycle algorithm in Figure~\ref{fig.flowchart}.
+        
 
         \begin{figure}
             \includegraphics[width=\textwidth]{img/fig_flowchart.pdf}
@@ -265,25 +271,28 @@ comparison.}
             \end{figure}
 
     \subsection{Proposed Solution}
-
+        % It is important to do a literature review for the following papers, there are 
+        % other works that tackle similar problems or use it as a strategy. - M 
         In this article, we test various strategies to generate a new population to
         replace individuals that have already died (or were discarded) due to their
         aptitude, as happens in the life cycle. We previously used to generate a new
         random set of solutions, with the cost of losing all evolution knowledge. The
         strategy we describe in this paper uses elites to take advantage of the
+        % Where are the elites explained? - M
         historical evolution, especially the best individuals, where we look for the
         offspring of the elite set to be somewhat close to them. We use the golden
         ratio to compute the distance between new individuals in the population, making
-        an improved distribution.
+        an improved distribution. % Why is better? Explain. - M
 
         We propose one promising alternative to restart the population, to solve
         extinction caused by nature's pressure in the Life Cycle algorithm: the
         projection of the historically best-found candidate solutions (Elite) towards
+        % Move the explanation of Elite to where we use the term for the first time - M
         the best-found candidate solution (Champion). This article proposes some
         strategies to carry out this operation, where the presented distribution
-        strategy obtained the best results.
+        strategy obtained the best results. % All this goes before they are mentioned. - M 
 
-        \subsubsection{How does it work?} 
+         % \subsubsection{How does it work?}  
             
             Based on the historically best candidate
             solution and the elite set, we use the Golden Ratio (shown in
@@ -301,6 +310,7 @@ comparison.}
 
             This strategy is how we can calculate the projection of the historically
             best-found candidate solutions (Elite) towards the best-found candidate
+            % You can use Elite now, we all now what it is. - M
             solution (Champion). To illustrate this concept we include
             Figure~\ref{fig.elite_projection}, placing the Elite solution on the far right
             and the Champion solution on the left corner, where a higher number of new
