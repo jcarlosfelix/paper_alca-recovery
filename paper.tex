@@ -146,7 +146,7 @@ comparison.}
     computing power according to the nature of the challenge
     \cite{armbrust2010view}.
 
-    In previous work, we introduced an algorithm inspired by the biological % Add the reference - M
+    In previous work, we introduced an algorithm inspired by the biological
     life-cycle of animal species \cite{Felix-Saul2022}. As in nature, population individuals grow older
     and age. In this algorithm's reproduction process, couples must match by mutual
     attraction, where sometimes individuals won't procreate offspring because of
@@ -156,7 +156,7 @@ comparison.}
     When this condition presents itself, it is required to create a new population
     to continue evolution (restart). 
     % Maybe you do it later, but explain what is a restart precisely 
-    We previously used to generate a new random % In a previous work (reference) - M
+    In a previous work \cite{Felix-Saul2022} we used to generate a new random
     set of solutions, with the cost of losing all evolution knowledge.
 
     One contribution of this paper is to demonstrate that it is possible to
@@ -198,8 +198,16 @@ comparison.}
 
     \subsection{Algorithm Model}
         
-        % Start by stating the similarities with a GA, in the sense that 
-        % all individuals have a genotype (chromosome)that is a list of values.  - M
+        This algorithm was inspired by the traditional Genetic Algorithm,
+        meaning that all individuals have a genotype (chromosome) that is a
+        list of values. We calculate the individual's fitness with the
+        evaluation function and do crossover and mutation to the population.
+        What makes our strategy different is that we don't use the concept of
+        evolutionary generations. We manage our set of solutions as a whole
+        that continuously evolve over time. Allowing individuals of different
+        ages to breed and generate offspring, as it happens in nature. The
+        crossover and mutation execute as independent processes that randomly
+        affect the individuals.
 
         Our algorithm's goal is to mimic the animal life cycle, where at any
         given moment, new individuals are born to be part of the population and
