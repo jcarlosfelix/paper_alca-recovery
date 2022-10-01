@@ -157,13 +157,13 @@ comparison.}
     our case scenario, when we refer to extinction in our algorithm, it means
     the population of individuals no longer exists. When this condition
     presents itself, it is required to create a new population to continue
-    evolution (restart).
-    
-    % Maybe you do it later, but explain what is a restart precisely 
-    In a previous work \cite{Felix-Saul2022} we used to generate a new random
-    set of solutions, with the cost of losing all evolution knowledge.
+    evolution (restart). Population restart is the process in which we create a
+    new set of individuals to replace the others that have already died (or
+    were discarded) due to their aptitude. In a previous work
+    \cite{Felix-Saul2022} we used to generate a new random set of solutions,
+    with the cost of losing all evolution knowledge.
 
-    One contribution of this paper is to demonstrate that it is possible to
+    One contribution of this paper is to proof that it is possible to
     evolve a population of individuals, similar to a Genetic Algorithm (GA),
     using a distributed, parallel, and asynchronous methodology by algorithm
     implementation and testing.
