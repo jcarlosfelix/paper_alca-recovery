@@ -279,22 +279,22 @@ comparison.}
         In this article, we test various strategies to generate a new population to
         replace individuals that have already died (or were discarded) due to their
         aptitude, as happens in the life cycle. We previously used to generate a new
-        random set of solutions, with the cost of losing all evolution knowledge. The
-        strategy we describe in this paper uses elites to take advantage of the
-        % Where are the elites explained? - M
-        historical evolution, especially the best individuals, where we look for the
-        offspring of the elite set to be somewhat close to them. We use the golden
-        ratio to compute the distance between new individuals in the population, making
+        random set of solutions, with the cost of losing all evolution knowledge. 
+        
+        This article proposes some strategies to carry out this operation,
+        where the presented distribution strategy obtained the best results. We
+        propose one promising alternative to restart the population, to solve
+        extinction caused by nature's pressure in the Life Cycle algorithm: the
+        projection of the historically best-found candidate solutions (Elite)
+        towards the best-found candidate solution (Champion).
+
+        The strategy we describe in this paper use an elite set, that includes
+        the historically best-found candidate solutions to take
+        advantage of the historical evolution. Our goal is for the offspring to
+        be somewhat close to the best individuals of the Elite.
+        We use the golden ratio to compute the distance between new individuals in the population, making
         an improved distribution. % Why is better? Explain. - M
 
-        We propose one promising alternative to restart the population, to solve
-        extinction caused by nature's pressure in the Life Cycle algorithm: the
-        projection of the historically best-found candidate solutions (Elite) towards
-        % Move the explanation of Elite to where we use the term for the first time - M
-        the best-found candidate solution (Champion). This article proposes some
-        strategies to carry out this operation, where the presented distribution
-        strategy obtained the best results. % All this goes before they are mentioned. - M 
-            
         Based on the historically best candidate
         solution and the elite set, we use the Golden Ratio (shown in
         Figure~\ref{fig.golden_ratio}) to compute the distance between new individuals
@@ -309,14 +309,13 @@ comparison.}
             \caption{Golden Ratio equation.} \label{fig.golden_ratio}
             \end{figure}
 
-        This strategy is how we can calculate the projection of the historically
-        best-found candidate solutions (Elite) towards the best-found candidate
-        % You can use Elite now, we all now what it is. - M
-        solution (Champion). To illustrate this concept we include
-        Figure~\ref{fig.elite_projection}, placing the Elite solution on the far right
-        and the Champion solution on the left corner, where a higher number of new
-        solutions will be closer to the Champion.
-
+        This strategy is how we can calculate the projection of the
+        historically Elite towards the Champion solution. To illustrate this
+        concept, we include Figure~\ref{fig.elite_projection}, placing the
+        Elite solution on the far right and the Champion solution on the left
+        corner. We can observe the higher amount of new solutions progressively
+        closer to the Champion.
+        
         \begin{figure}
             \centering
             \includegraphics[width=0.65\textwidth]{img/fig_elite_projection.pdf}
