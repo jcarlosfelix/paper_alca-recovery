@@ -302,17 +302,17 @@ comparison.}
 
         Based on the historically best candidate
         solution and the elite set, we use the Golden Ratio (shown in
-        Figure~\ref{fig.golden_ratio}) to compute the distance between new individuals
+        Equation~\ref{eq.golden_ratio}) to compute the distance between new individuals
         in the population, making an improved distribution. It randomly selects a
         solution from the elite set and uses the Golden Ratio 
         \cite{nematollahi2020novel, gaikwad2021face, khesin2022golden, sym13081334, https://doi.org/10.1111/nyas.14895} 
         to compute multiple solutions against the best-found candidate.
 
-        \begin{figure}
+        \begin{equation}
             \centering
-            \includegraphics[width=25mm]{img/fig_golden_ratio.pdf}
-            \caption{Golden Ratio equation.} \label{fig.golden_ratio}
-            \end{figure}
+            \begin{matrix}\includegraphics[width=25mm]{img/eq_golden_ratio.pdf}\end{matrix}
+            \label{eq.golden_ratio}
+            \end{equation}
 
         This strategy is how we can calculate the projection of the
         historically Elite towards the Champion solution. To illustrate this
